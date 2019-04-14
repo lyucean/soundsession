@@ -1,0 +1,32 @@
+.home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 114px 5fr 40px;
+    grid-template-areas:
+            "home__selector home__menu"
+            "home__player home__player"
+            "home__playlist home__playlist";
+    height: 100vh;
+}
+.home__selector {
+    grid-area: home__selector;
+}
+.home__selector-station-icon {
+    margin: 40px;
+    opacity: 30%;
+}
+.home__menu {
+    grid-area: home__menu;
+    text-align: right;
+}
+.home__menu-icon {
+    margin: 52px 40px;
+}
+.home__player {
+    grid-area: home__player;
+}
+.home__playlist {
+    grid-area: home__playlist;
+    backdrop-filter: blur(80px);
+    background: rgba(0, 0, 0, 0.8);
+}
