@@ -2,7 +2,7 @@
   <div class="home">
     <div class="home__selector">
       <router-link to="/selectStation">
-        <img class="home__selector-station-icon" src="../../assets/selector_station_icon.svg">
+        <img class="home__selector-station-icon" src="../../assets/selector_station_open.svg">
       </router-link>
     </div>
     <div class="home__menu">
@@ -15,5 +15,5 @@
     </div>
   </div>
 </template>
-<script src="./Home.js"></script>
 <style src="./Home.css" scoped></style>
+<script src="./Home.js"></script>

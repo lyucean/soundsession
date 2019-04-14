@@ -1,0 +1,54 @@
+/* Струкутра страницы */
+.select-station {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 114px 1fr;
+    grid-template-areas:
+            "select-station__close"
+            "select-station__grid";
+    height: 100vh;
+}
+.select-station__close {
+    grid-area: select-station__close;
+}
+.select-station__close-icon {
+    margin: 40px;
+    opacity: 30%;
+}
+.select-station__grid {
+    grid-area: select-station__grid;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: #fff2ff;
+}
+/* Станции */
+.station {
+    display: grid;
+    align-items: center;
+}
+.station_link {
+    text-decoration: none;
+}
+.station_wrap {
+    height: auto;
+    width: auto;
+    margin-left: 15%;
+    margin-right: 10%;
+    text-decoration: none;
+}
+.station__title {
+    font-size: 46px;
+    line-height: 68px;
+}
+.station__genres {
+    font-size: 18px;
+    line-height: 30px;
+}
+/* Анимация поялвления */
+.station_link-appear-active-class{
+    opacity: 0;
+    transition-duration: 300ms;
+}
+.station_link-appear-to-class{
+    opacity: 1;
+}
