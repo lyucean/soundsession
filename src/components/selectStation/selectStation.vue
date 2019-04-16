@@ -11,9 +11,9 @@
                         appear-to-class="station_link-appear-to-class"
                         appear-active-class="station_link-appear-active-class"
                         tag="div">
-          <div class="station" ref="station" v-for="(station, index) in myStations"
+            <div class="station" ref="station" v-for="(station, index) in myStations"
                v-bind:key="index"
-               v-bind:style="{ background: station.colorBackground, opacity: leaveOpacity, 'transition-delay': index * 40 + 'ms' }">
+               v-bind:style="{ background: station.colorBackground, opacity: leaveOpacity, 'transition-delay': index * 41 + 'ms' }">
           <router-link to="/" class="station_link">
             <div class="station_wrap"
                  v-bind:style="{ color: station.colorText}">
