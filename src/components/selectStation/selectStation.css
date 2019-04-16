@@ -10,21 +10,30 @@
 }
 .select-station__close {
     grid-area: select-station__close;
+    z-index: 2;
 }
 .select-station__close-icon {
     margin: 40px;
     opacity: 30%;
+    transition-duration: 300ms;
 }
 .select-station__grid {
     grid-area: select-station__grid;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background: #fff2ff;
 }
 /* Станции */
 .station {
     display: grid;
     align-items: center;
+    will-change: transform;
+}
+.station:hover{
+    box-shadow: 0 0 500px 1500px rgba(255, 255, 255, 0.7);
+    transition-duration: 400ms;
+    transition: box-shadow 0.4s ease-in-out;
+    will-change: transform;
+    z-index: 1;
 }
 .station_link {
     text-decoration: none;
@@ -47,7 +56,7 @@
 /* Анимация поялвления */
 .station_link-appear-active-class{
     opacity: 0;
-    transition-duration: 300ms;
+    transition-duration: 400ms;
 }
 .station_link-appear-to-class{
     opacity: 1;
