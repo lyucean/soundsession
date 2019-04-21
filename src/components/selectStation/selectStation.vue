@@ -7,7 +7,7 @@
         </router-link>
     </div>
 
-    <transition-group class="select-station__grid" name="fade" tag="div">
+    <transition-group class="select-station__grid" tag="div">
      <div class="station" v-for="item in items" v-bind:key="item.title"
           v-bind:style="{ background: item.colorBackground, opacity: item.opacity }">
        <router-link to="/" class="station_link">
@@ -21,37 +21,27 @@
   </div>
 </template>
 
-
-
 <style src="./selectStation.css" scoped></style>
 <script>
 import stations from '../../data/stations.js'
-
-// нам нужно добавить свойство прозарчности в массв для каждого элемента
-let stations_revised = stations.map(function (el) {
-  el['opacity'] = 0
-  return el
-})
-
-// console.log(stations_revised);
 
 export default {
   name: 'stations_revised',
   data () {
     return {
-      items: stations,
+      items: stations.map(function (el) {
+        // нам нужно добавить свойство прозарчности в массв для каждого элемента
+        el['opacity'] = 0
+        return el
+      }),
       appear_delay: 50, // время задержки перед появлением
     }
   },
   mounted: function () {
     let self = this
     this.items.forEach(function (item, i) {
-      setTimeout(() => item.opacity = 1, self.appear_delay * i)
+      setTimeout(() => item.opacity = .8, self.appear_delay * i)
     })
-    // stations.forEach(function (station, i, arr) {
-    //   setTimeout(() => self.items.push(station), self.appear_delay * i);
-    // })
-
   },
   beforeRouteLeave (to, from, next) {
     let self = this
@@ -63,6 +53,6 @@ export default {
         }
       }, self.appear_delay * i)
     })
-  }
+  },
 }
 </script>

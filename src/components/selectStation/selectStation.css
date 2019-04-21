@@ -33,6 +33,10 @@
     cursor: pointer;
     transition-duration: 200ms;
 }
+.station:hover {
+    opacity: 1!important;
+    transition-duration: 20ms;
+}
 
 .station_link {
     text-decoration: none;
