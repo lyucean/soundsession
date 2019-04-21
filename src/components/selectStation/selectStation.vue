@@ -22,6 +22,7 @@
 </template>
 
 <style src="./selectStation.css" scoped></style>
+
 <script>
 import stations from '../../data/stations.js'
 

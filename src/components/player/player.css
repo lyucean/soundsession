@@ -1,0 +1,19 @@
+.player {
+    display: grid;
+    width: auto;
+    height: auto;
+}
+.stations-title{
+    font-size: 46px;
+    line-height: 68px;
+}
+.stations-genres{
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.track-name,
+.track-author{
+    font-size: 22px;
+    line-height: 30px;
+}
