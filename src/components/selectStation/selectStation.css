@@ -9,13 +9,15 @@
 
 .select-station__close {
     grid-area: select-station__close;
-    z-index: 2;
 }
 
 .select-station__close-icon {
     margin: 40px;
-    opacity: 30%;
-    transition-duration: 300ms;
+    transition-duration: 200ms;
+    opacity: 0.5;
+}
+.select-station__close-icon:hover {
+    opacity: 1;
 }
 
 .select-station__grid {
@@ -28,29 +30,8 @@
 .station {
     display: grid;
     align-items: center;
-    position: relative;
     cursor: pointer;
-}
-
-.station::before {
-    /* Position the pseudo-element. */
-    content: ' ';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    box-shadow: 0 0 1000px 1500px rgba(255, 255, 255, 0.7);
-
-    /* Hidden by default. */
-    opacity: 0;
-    transition: opacity 300ms;
-    z-index: 1;
-}
-
-.station:hover::before {
-    opacity: 1;
+    transition-duration: 200ms;
 }
 
 .station_link {
@@ -73,15 +54,4 @@
 .station__genres {
     font-size: 18px;
     line-height: 30px;
-}
-
-/* Анимация поялвления */
-.station_link-appear-active-class {
-    opacity: 0;
-    transition: opacity .3s ease-out;
-}
-
-.station_link-appear-to-class {
-    opacity: 1;
-    transition: opacity .3s ease-out;
 }

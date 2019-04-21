@@ -15,5 +15,5 @@
     </div>
   </div>
 </template>
-<style src="./Home.css" scoped></style>
-<script src="./Home.js"></script>
+<style src="./home.css" scoped></style>
+<script src="./home.js"></script>

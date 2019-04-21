@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../components/Home/Home.vue'
+import home from '../components/home/home.vue'
 import selectStation from '../components/selectStation/selectStation'
 
 Vue.use(Router)
@@ -9,8 +9,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Home
+      name: 'home',
+      component: home
     },
     {
       path: '/selectStation',

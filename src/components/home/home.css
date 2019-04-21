@@ -13,7 +13,7 @@
 }
 .home__selector-station-icon {
     margin: 40px;
-    opacity: 30%;
+    opacity: 0.3;
 }
 .home__menu {
     grid-area: home__menu;
