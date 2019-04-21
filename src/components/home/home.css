@@ -20,6 +20,11 @@
     transition-duration: 200ms;
 }
 
+.home__selector-link-appear-active-class {
+    opacity: 0;
+    transition: opacity .5s;
+}
+
 .home__selector-link:hover {
     opacity: 1;
 }
@@ -40,7 +45,6 @@
 .home__menu-icon:hover {
     cursor: pointer;
 }
-
 
 .home__player_block {
     display: grid;
