@@ -8,11 +8,13 @@
     <div class="home__menu">
       <img class="home__menu-icon" src="../../assets/menu_icon.svg">
     </div>
-    <div class="home__player">
-      <h1>{{ title }}</h1>
+    <div class="home__player_block">
+      <div class="home__player">
+        <player></player>
+      </div>
     </div>
     <transition appear
-                appear-active-class = "home__playlist-appear-active-class">
+                appear-active-class="home__playlist-appear-active-class">
     <div class="home__playlist">
       <img class="home__playlist-icon" src="../../assets/play_list_closet.svg">
     </div>
@@ -20,4 +22,17 @@
   </div>
 </template>
 <style src="./home.css" scoped></style>
-<script src="./home.js"></script>
+<script src="./home.js">
+    import player from '../player/player.vue'
+    export default {
+      name: 'home.vue',
+      data () {
+        return {
+          title: 'All sound'
+        }
+      },
+      components: {
+        player
+      }
+    }
+</script>
