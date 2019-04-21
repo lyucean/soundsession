@@ -13,14 +13,20 @@
 
 .select-station__close-icon {
     margin: 40px;
-    opacity: 0.5;
-    transition-duration: 50ms;
 }
-.select-station__close-icon:hover {
+
+.select-station__close-link {
+    display: inline-flex;
+    opacity: 0.3;
+    transition-duration: 200ms;
+}
+
+.select-station__close-link:hover {
     opacity: 1;
 }
-.select-station__close-icon:active {
-    opacity: 0.5;
+
+.select-station__close-link:active {
+    opacity: .2;
 }
 
 .select-station__grid {
@@ -36,8 +42,9 @@
     cursor: pointer;
     transition-duration: 200ms;
 }
+
 .station:hover {
-    opacity: 1!important;
+    opacity: 1 !important;
     transition-duration: 100ms;
 }
 

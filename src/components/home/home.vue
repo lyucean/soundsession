@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="home__selector">
-      <router-link to="/selectStation">
+      <router-link to="/selectStation" class="home__selector-link">
         <img class="home__selector-station-icon" src="../../assets/selector_station_open.svg">
       </router-link>
     </div>
