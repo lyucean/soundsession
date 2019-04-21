@@ -27,6 +27,14 @@
 }
 .home__playlist {
     grid-area: home__playlist;
-    backdrop-filter: blur(80px);
     background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    opacity: 1;
+    transition: opacity .5s;
+}
+.home__playlist-icon {
+    margin-top: 15px;
+}
+.home__playlist-appear-active-class {
+    opacity: 0;
 }

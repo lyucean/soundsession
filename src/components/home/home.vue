@@ -11,8 +11,12 @@
     <div class="home__player">
       <h1>{{ title }}</h1>
     </div>
+    <transition appear
+                appear-active-class = "home__playlist-appear-active-class">
     <div class="home__playlist">
+      <img class="home__playlist-icon" src="../../assets/play_list_closet.svg">
     </div>
+    </transition>
   </div>
 </template>
 <style src="./home.css" scoped></style>
