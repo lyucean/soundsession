@@ -13,11 +13,14 @@
 
 .select-station__close-icon {
     margin: 40px;
-    transition-duration: 200ms;
     opacity: 0.5;
+    transition-duration: 50ms;
 }
 .select-station__close-icon:hover {
     opacity: 1;
+}
+.select-station__close-icon:active {
+    opacity: 0.5;
 }
 
 .select-station__grid {
