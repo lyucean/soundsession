@@ -35,7 +35,7 @@
 }
 .station:hover {
     opacity: 1!important;
-    transition-duration: 20ms;
+    transition-duration: 100ms;
 }
 
 .station_link {
