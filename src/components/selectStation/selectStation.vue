@@ -3,7 +3,7 @@
     <div class="select-station__close">
       <router-link to="/" class="select-station__close-link">
         <img class="select-station__close-icon"
-             src="../../assets/selector_station_close.svg">
+             src="./selector_station_close.svg">
         </router-link>
     </div>
 

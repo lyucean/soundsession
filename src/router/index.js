@@ -16,7 +16,7 @@ export default new Router({
       path: '/selectStation',
       name: 'selectStation',
       component: selectStation,
-    }
+    },
   ],
   mode: `history`,
 })
