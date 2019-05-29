@@ -2,7 +2,6 @@
     display: grid;
     width: auto;
     height: auto;
-    color: #000;
 }
 
 .stations-title {
@@ -25,30 +24,31 @@
     display: grid;
     grid-template-columns: 105px 53px 53px 105px 81px;
     margin-top: 40px;
-    height: 70px;
+    height: 60px;
 }
 
 .button-play-pause {
-
+    display: flex;
 }
 
-.button-play-pause > img {
+.button-play-pause > svg {
     cursor: pointer;
 }
 
 .button-next,
 .button-previous {
     display: flex;
+    padding-top: 25px;
 }
 
-.button-next > img,
-.button-previous > img {
+.button-next > svg,
+.button-previous > svg {
     cursor: pointer;
     opacity: .3;
 }
 
-.button-next > img:hover,
-.button-previous > img:hover {
+.button-next > svg:hover,
+.button-previous > svg:hover {
     opacity: 1;
     transition-duration: 200ms;
 }
@@ -64,14 +64,15 @@
 .button-volume {
     display: flex;
     justify-content: flex-end;
+    padding-top: 25px;
 }
 
-.button-volume > img {
+.button-volume > svg {
     cursor: pointer;
     opacity: .3;
 }
 
-.button-volume > img:hover {
+.button-volume > svg:hover {
     opacity: 1;
     transition-duration: 200ms;
 }
@@ -80,6 +81,7 @@
     display: grid;
     align-content: center;
     padding-left: 15px;
+    padding-top: 3px;
 }
 
 .volume-progress-bar > input {

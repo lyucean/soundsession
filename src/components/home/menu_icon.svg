@@ -1,7 +1,7 @@
-<svg width="39" height="10" viewBox="0 0 39 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="39" height="10" viewBox="0 0 39 10" fill="#575757" xmlns="http://www.w3.org/2000/svg">
     <g opacity="0.3">
-        <ellipse cx="5.01429" cy="5" rx="5.01429" ry="5" fill="black"/>
-        <ellipse cx="19.5" cy="5" rx="5.01429" ry="5" fill="black"/>
-        <ellipse cx="33.9857" cy="5" rx="5.01429" ry="5" fill="black"/>
+        <ellipse cx="5.01429" cy="5" rx="5.01429" ry="5"/>
+        <ellipse cx="19.5" cy="5" rx="5.01429" ry="5"/>
+        <ellipse cx="33.9857" cy="5" rx="5.01429" ry="5"/>
     </g>
 </svg>

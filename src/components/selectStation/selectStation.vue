@@ -10,7 +10,7 @@
     <transition-group class="select-station__grid" tag="div">
      <div class="station" v-for="item in items" v-bind:key="item.title"
           v-bind:style="{ background: item.colorBackground, opacity: item.opacity }">
-       <router-link to="/" class="station__link">
+       <router-link :to="item.path" class="station__link">
          <div class="station_wrap" v-bind:style="{color: item.colorText}">
            <div class="station__title">{{item.title}}</div>
            <div class="station__genres">{{item.genres}}</div>
