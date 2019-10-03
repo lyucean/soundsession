@@ -74,3 +74,10 @@
     font-size: 18px;
     line-height: 30px;
 }
+
+.select-station__grid:hover .station{
+  opacity: .3 !important;
+}
+.select-station__grid:hover .station:hover{
+  opacity: 1 !important;
+}
