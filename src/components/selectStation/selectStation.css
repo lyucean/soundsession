@@ -40,12 +40,11 @@
     display: grid;
     align-items: center;
     cursor: pointer;
-    transition-duration: 200ms;
+    transition-duration: 400ms;
 }
 
 .station:hover {
-    /*opacity: 1 !important;*/
-    transition-duration: 100ms;
+    transition-duration: 400ms;
 }
 
 .station__link {

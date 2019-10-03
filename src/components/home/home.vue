@@ -1,5 +1,5 @@
 <template>
-  <div class="home" v-bind:style="{ background: station.colorBackground, color: station.colorText }">
+  <div class="home" v-bind:style="{ backgroundColor: station.colorBackground, color: station.colorText }">
     <div class="home__selector">
     <transition appear appear-active-class="home__selector-link-appear-active-class">
       <router-link to="/selectStation" class="home__selector-link">
