@@ -35,10 +35,10 @@
 <style src="./home.css" scoped></style>
 
 <script>
-    import player from '../player/player.vue'
-    import stations from '../../data/stations.js'
+  import player from '../player/player.vue'
+  import stations from '../../data/stations.js'
 
-    export default {
+  export default {
       name: 'home',
       data () {
         return {
