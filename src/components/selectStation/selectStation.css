@@ -44,7 +44,7 @@
 }
 
 .station:hover {
-    opacity: 1 !important;
+    /*opacity: 1 !important;*/
     transition-duration: 100ms;
 }
 
@@ -75,9 +75,9 @@
     line-height: 30px;
 }
 
-.select-station__grid:hover .station{
+.hover_effect:hover .station{
   opacity: .3 !important;
 }
-.select-station__grid:hover .station:hover{
+.hover_effect:hover .station:hover{
   opacity: 1 !important;
 }

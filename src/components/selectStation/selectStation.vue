@@ -7,7 +7,7 @@
       </router-link>
     </div>
 
-    <transition-group class="select-station__grid" tag="div">
+    <transition-group class="select-station__grid" v-bind:class="{ hover_effect: hoverEffectIsActive  }" tag="div">
       <div class="station" v-for="item in items" v-bind:key="item.title"
            v-bind:style="{ background: item.colorBackground, opacity: item.opacity }">
         <router-link :to="item.path" class="station__link">
@@ -35,7 +35,8 @@
           el['opacity'] = 0
           return el
         }),
-        appear_delay: 50, // время задержки перед появлением
+        appear_delay: 50, // время задержки перед появлением/исчезновением каждого элемента
+        hoverEffectIsActive: false
       }
     },
     mounted: function () {
@@ -43,8 +44,10 @@
       this.items.forEach(function (item, i) {
         setTimeout(() => item.opacity = 1, self.appear_delay * i)
       })
+      this.hoverEffectIsActive = true;
     },
     beforeRouteLeave (to, from, next) {
+      this.hoverEffectIsActive = false;
       let self = this
       this.items.forEach(function (item, i) {
         setTimeout(function () {
