@@ -1,21 +1,19 @@
 <template>
   <transition appear appear-active-class="home__effect-appear">
-    <div class="home" :style="{ backgroundColor: station.colorBackground, color: station.colorText }">
+    <div class="home" :style="setCSSvar">
       <div class="home__selector">
-        <router-link v-bind:style="{ backgroundColor: station.colorText}"
-                     to="/selectStation" class="home__selector-link"></router-link>
+        <router-link to="/selectStation" class="home__selector-link"></router-link>
       </div>
       <div class="home__menu">
-        <router-link v-bind:style="{ backgroundColor: station.colorText}"
-                     to="/selectStation" class="home__menu-icon-link"></router-link>
+        <router-link to="/selectStation" class="home__menu-link"></router-link>
       </div>
       <div class="home__player_block">
         <div class="home__player">
           <player :data="{ station }"/>
         </div>
       </div>
-      <div class="home__playlist" :style="{backgroundColor: station.colorText}">
-        <div class="home__playlist-button" :style="{ backgroundColor: station.colorBackground}"></div>
+      <div class="home__playlist">
+        <div class="home__playlist-button"></div>
       </div>
     </div>
   </transition>
@@ -41,5 +39,14 @@
     components: {
       player
     },
+    computed: {
+      setCSSvar() {
+        return {
+          '--station-color-background': this.station.colorBackground,
+          '--station-color-text': this.station.colorText,
+        }
+      }
+    }
   }
+  //:style="{ backgroundColor: station.colorBackground, color: station.colorText }
 </script>

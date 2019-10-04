@@ -4,6 +4,8 @@
   grid-template-rows: 114px 5fr 40px;
   grid-template-areas: "home__selector home__menu" "home__player_block home__player_block" "home__playlist home__playlist";
   height: 100vh;
+  background-color: var(--station-color-background);
+  color: var(--station-color-text);
 }
 
 /* home__selector */
@@ -17,6 +19,7 @@
   height: 30px;
   width: 30px;
   margin: 40px;
+  background-color: var(--station-color-text);
   -webkit-mask: url("./selector_station_open.svg") no-repeat center;
   mask: url("./selector_station_open.svg") no-repeat center;
 }
@@ -27,11 +30,12 @@
   text-align: right;
 }
 
-.home__menu-icon-link {
+.home__menu-link {
   display: inline-flex;
   height: 10px;
   width: 39px;
   margin: 52px 40px;
+  background-color: var(--station-color-text);
   -webkit-mask: url("./menu_icon.svg") no-repeat center;
   mask: url("./menu_icon.svg") no-repeat center;
 }
@@ -47,7 +51,7 @@
 /* home__playlist */
 .home__playlist {
   grid-area: home__playlist;
-  background-color: #000000;
+  background-color: var(--station-color-text);
   text-align: center;
   cursor: pointer;
 }
@@ -56,6 +60,7 @@
   margin: 15px auto;
   height: 8px;
   width: 22px;
+  background-color: var(--station-color-background);
   -webkit-mask: url("./play_list_closet.svg") no-repeat center;
   mask: url("./play_list_closet.svg") no-repeat center;
 }
@@ -68,7 +73,7 @@
 }
 
 .home__playlist,
-.home__menu-icon-link,
+.home__menu-link,
 .home__selector-link {
   opacity: 0.3;
   transition-duration: .5s;
@@ -82,7 +87,7 @@
 }
 
 .home__playlist:hover,
-.home__menu-icon-link:hover,
+.home__menu-link:hover,
 .home__selector-link:hover {
   opacity: 1;
 }

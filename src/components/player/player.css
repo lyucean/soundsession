@@ -36,6 +36,7 @@
 .button-play__button {
   height: 68px;
   width: 60px;
+  background-color: var(--station-color-background);
   -webkit-mask: url("./player_play.svg") no-repeat center;
   mask: url("./player_play.svg") no-repeat center;
 }
@@ -43,6 +44,7 @@
 .button-pause__button {
   height: 68px;
   width: 52px;
+  background-color: var(--station-color-background);
   -webkit-mask: url("./player_pause.svg") no-repeat center;
   mask: url("./player_pause.svg") no-repeat center;
 }
@@ -128,8 +130,8 @@
 
 .track-name::selection,
 .track-author::selection {
-  background-color: var(--player-selection-background);
-  color: var(--player-selection-text);
+  background-color: var(--station-color-background);
+  color: var(--station-color-text);
 }
 
 .button-block,
