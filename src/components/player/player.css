@@ -126,6 +126,25 @@
   margin-top: 40px;
 }
 
+.track-name::selection,
+.track-author::selection {
+  background-color: var(--player-selection-background);
+  color: var(--player-selection-text);
+}
+
+.button-block,
+.stations-genres,
+.stations-title{
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+
 /* общий класс для эффекта первого появлении элементов */
 /*.track-author,*/
 /*.track-name,*/
