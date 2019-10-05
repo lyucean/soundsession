@@ -1,6 +1,6 @@
 <template>
   <transition appear appear-active-class="home__effect-appear">
-    <div class="home" :style="setCSSvar">
+    <div class="home" :style="setVarCSS">
       <div class="home__selector">
         <router-link to="/selectStation" class="home__selector-link"></router-link>
       </div>
@@ -40,13 +40,15 @@
       player
     },
     computed: {
-      setCSSvar() {
+      setVarCSS() {
         return {
           '--station-color-background': this.station.colorBackground,
           '--station-color-text': this.station.colorText,
         }
       }
+    },
+    mounted() {
+      document.title = this.station.title
     }
   }
-  //:style="{ backgroundColor: station.colorBackground, color: station.colorText }
 </script>

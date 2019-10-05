@@ -1,5 +1,5 @@
 <template>
-  <div class="player" :style="setCSSvar">
+  <div class="player" :style="setVarCSS">
     <div class="stations-title">{{ title }}</div>
     <div class="stations-genres">{{ genres }}</div>
     <div class="button-block">
@@ -57,7 +57,7 @@
       this.track_author = 'Moby'
     },
     computed: {
-      setCSSvar() {
+      setVarCSS() {
         return {
           '--station-color-background': this.stationTextColor,
           '--station-color-text': this.stationBackgroundColor,
