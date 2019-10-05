@@ -18,6 +18,7 @@
         </router-link>
       </div>
     </transition-group>
+
   </div>
 </template>
 
@@ -40,23 +41,32 @@
       }
     },
     mounted: function () {
-      let self = this
+
+      // анимация разворачивания списков
       this.items.forEach(function (item, i) {
-        setTimeout(() => item.opacity = 1, self.appear_delay * i)
-      })
-      this.hoverEffectIsActive = true;
+        setTimeout(() => item.opacity = 1, this.appear_delay * i)
+      }, this)
+
+      // включение эффекта наведения на станцию
+      this.hoverEffectIsActive = true
     },
     beforeRouteLeave (to, from, next) {
-      this.hoverEffectIsActive = false;
-      let self = this
-      this.items.forEach(function (item, i) {
+
+      // выключение эффекта наведения на станцию
+      this.hoverEffectIsActive = false
+
+      // эффект постепенного исчезновения
+      this.items.forEach(function (item, i, items) {
         setTimeout(function () {
           item.opacity = 0
-          if (i + 1 === self.items.length) {
+
+          // после послднего переходим на страницу
+          if (i === items.length - 1) {
             next()
           }
-        }, self.appear_delay * i)
-      })
+        }, this.appear_delay * i)
+      }, this)
+
     },
   }
 </script>
