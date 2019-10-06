@@ -10,7 +10,7 @@
       </div>
 
       <transition name="slide-fade">
-        <div v-if="play" class="wrapper-animation">
+        <div v-if="buttonsDisplay" class="wrapper-animation">
           <div class="button-previous"></div>
           <div class="button-next"></div>
           <div class="button-volume"></div>
@@ -44,12 +44,36 @@
         stationTextColor: station.colorText,
         volume: 75,
         play: false,
+        buttonsDisplay: false,
+        mouseWait: null,
       }
     },
     methods: {
       playPause: function () {
         this.play = !this.play
-      }
+        // Показываем элементы управления.
+        this.buttonsDisplay = true
+      },
+      // Обработать движение мышью.
+      onMouseMove () {
+        // Если полный экран.
+        if (this.play) {
+          // Показываем элементы управления.
+          this.buttonsDisplay = true
+          // Запускаем таймер.
+          this.runTiming()
+        }
+      },
+      // Запустить таймер.
+      runTiming () {
+        // Всегда очищаем предыдущий таймер при вызове метода.
+        clearTimeout(this.mouseWait)
+        // Запускаем новый отсчет.
+        this.mouseWait = setTimeout(() => {
+          // Скрыть элементы управления.
+          this.buttonsDisplay = false
+        }, 5000)
+      },
     },
     mounted: function () {
       this.track_name = 'The Right Thing'
@@ -62,6 +86,10 @@
           '--station-color-text': this.stationBackgroundColor,
         }
       }
+    },
+    created: function() {
+      // В родителе емитим это событие
+      this.$parent.$on('onMouseMove', this.onMouseMove);
     }
   }
 </script>

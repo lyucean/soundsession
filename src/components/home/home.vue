@@ -1,6 +1,6 @@
 <template>
   <transition appear appear-active-class="home__effect-appear">
-    <div class="home" :style="setVarCSS">
+    <div class="home" :style="setVarCSS" @mousemove="onMouseMove">
       <div class="home__selector">
         <router-link to="/selectStation" class="home__selector-link"></router-link>
       </div>
@@ -49,6 +49,12 @@
     },
     mounted () {
       document.title = this.station.title
+    },
+    methods: {
+      // Пробросим собыите срабатывания мыши
+      onMouseMove() {
+        this.$emit('onMouseMove');
+      }
     }
   }
 </script>
