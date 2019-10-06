@@ -4,20 +4,20 @@
     <div class="stations-genres">{{ genres }}</div>
     <div class="button-block">
 
-      <div class="button-wrapper">
+      <div class="wrapper-button">
         <div v-if="play" v-on:click="playPause" class="button-pause"></div>
-        <div v-else v-on:click="playPause"  class="button-play"></div>
+        <div v-else v-on:click="playPause" class="button-play"></div>
       </div>
 
-
-<!--      <div class="button-previous"></div>-->
-<!--      <div class="button-next"></div>-->
-<!--      <div class="button-volume"></div>-->
-
       <transition name="slide-fade">
-        <label v-if="play" class="volume-progress-bar">
-          <input type="range" v-model="volume" min="1" max="100">
-        </label>
+        <div v-if="play" class="wrapper-animation">
+          <div class="button-previous"></div>
+          <div class="button-next"></div>
+          <div class="button-volume"></div>
+          <label class="volume-progress-bar">
+            <input type="range" v-model="volume" min="1" max="100">
+          </label>
+        </div>
       </transition>
     </div>
 
@@ -54,8 +54,6 @@
     mounted: function () {
       this.track_name = 'The Right Thing'
       this.track_author = 'Moby'
-
-      setTimeout(() => item.opacity = 1, this.appear_delay * i)
     },
     computed: {
       setVarCSS () {

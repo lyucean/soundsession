@@ -1,7 +1,8 @@
 .player {
   display: grid;
-  width: auto;
   height: auto;
+  width: 412px;
+  /*width: auto;*/
 }
 
 .stations-title {
@@ -48,7 +49,7 @@
   user-select: none; /* Non-prefixed version, currently not supported by any browser */
 }
 
-.button-wrapper {
+.wrapper-button {
   width: 105px;
 }
 
@@ -58,6 +59,7 @@
   background-color: var(--station-color-background);
   -webkit-mask: url("./player_play.svg") no-repeat center;
   mask: url("./player_play.svg") no-repeat center;
+  cursor: pointer;
 }
 
 .button-pause {
@@ -66,6 +68,7 @@
   background-color: var(--station-color-background);
   -webkit-mask: url("./player_pause.svg") no-repeat center;
   mask: url("./player_pause.svg") no-repeat center;
+  cursor: pointer;
 }
 
 .button-next,
@@ -75,12 +78,6 @@
   opacity: .3;
   width: 53px;
   background-color: var(--station-color-background);
-}
-
-.button-next:hover,
-.button-previous:hover {
-  opacity: 1;
-  transition-duration: 200ms;
 }
 
 .button-previous {
@@ -93,6 +90,11 @@
   mask: url("./player_next.svg") no-repeat right;
 }
 
+.wrapper-animation {
+  display: flex;
+  align-items: stretch;
+  width: auto;
+}
 .button-volume {
   width: 105px;
   display: flex;
@@ -102,11 +104,6 @@
   background-color: var(--station-color-background);
   -webkit-mask: url("./player_volume.svg") no-repeat right;
   mask: url("./player_volume.svg") no-repeat right;
-}
-
-.button-volume:hover {
-  opacity: 1;
-  transition-duration: 200ms;
 }
 
 .volume-progress-bar {
@@ -129,10 +126,6 @@
   background: var(--station-color-background);
 }
 
-.volume-progress-bar > input:hover {
-  opacity: 1;
-}
-
 .volume-progress-bar > input::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -151,6 +144,15 @@
   cursor: pointer;
 }
 
+
+.button-volume:hover,
+.button-next:hover,
+.button-previous:hover,
+.volume-progress-bar > input:hover {
+  opacity: 1;
+  transition-duration: 200ms;
+}
+
 /* эффект анимации */
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
@@ -160,8 +162,9 @@
 .slide-fade-leave-active {
   transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.slide-fade-enter, .slide-fade-leave-to
+.slide-fade-enter,
+.slide-fade-leave-to
   /* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(-30px);
+  transform: translateX(-50px);
   opacity: 0;
 }
