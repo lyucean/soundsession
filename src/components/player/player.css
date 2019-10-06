@@ -20,20 +20,39 @@
   line-height: 30px;
 }
 
+.track-name {
+  margin-top: 40px;
+}
+
+.track-name::selection,
+.track-author::selection {
+  background-color: var(--station-color-background);
+  color: var(--station-color-text);
+}
+
 .button-block {
-  display: grid;
-  grid-template-columns: 105px 53px 53px 105px 81px;
+  display: flex;
+  align-items: stretch;
   margin-top: 40px;
   height: 68px;
 }
 
-.button-play,
-.button-pause {
-  display: flex;
-  cursor: pointer;
+.button-block,
+.stations-genres,
+.stations-title {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently not supported by any browser */
 }
 
-.button-play__button {
+.button-wrapper {
+  width: 105px;
+}
+
+.button-play {
   height: 68px;
   width: 60px;
   background-color: var(--station-color-background);
@@ -41,7 +60,7 @@
   mask: url("./player_play.svg") no-repeat center;
 }
 
-.button-pause__button {
+.button-pause {
   height: 68px;
   width: 52px;
   background-color: var(--station-color-background);
@@ -54,8 +73,9 @@
   display: flex;
   cursor: pointer;
   opacity: .3;
+  width: 53px;
+  background-color: var(--station-color-background);
 }
-
 
 .button-next:hover,
 .button-previous:hover {
@@ -64,18 +84,24 @@
 }
 
 .button-previous {
-  justify-content: flex-start;
+  -webkit-mask: url("./player_previous.svg") no-repeat left;
+  mask: url("./player_previous.svg") no-repeat left;
 }
 
 .button-next {
-  justify-content: flex-end;
+  -webkit-mask: url("./player_next.svg") no-repeat right;
+  mask: url("./player_next.svg") no-repeat right;
 }
 
 .button-volume {
+  width: 105px;
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
   opacity: .3;
+  background-color: var(--station-color-background);
+  -webkit-mask: url("./player_volume.svg") no-repeat right;
+  mask: url("./player_volume.svg") no-repeat right;
 }
 
 .button-volume:hover {
@@ -84,6 +110,7 @@
 }
 
 .volume-progress-bar {
+  width: 81px;
   display: grid;
   align-content: center;
   padding-left: 15px;
@@ -95,11 +122,11 @@
   width: 100%;
   height: 3px;
   border-radius: 5px;
-  background: #000;
   outline: none;
   opacity: 0.3;
   -webkit-transition: .2s;
   transition: opacity .2s;
+  background: var(--station-color-background);
 }
 
 .volume-progress-bar > input:hover {
@@ -112,7 +139,7 @@
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #000;
+  background: var(--station-color-background);
   cursor: pointer;
 }
 
@@ -124,35 +151,17 @@
   cursor: pointer;
 }
 
-.track-name {
-  margin-top: 40px;
+/* эффект анимации */
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .2s ease;
 }
-
-.track-name::selection,
-.track-author::selection {
-  background-color: var(--station-color-background);
-  color: var(--station-color-text);
+.slide-fade-leave-active {
+  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-
-.button-block,
-.stations-genres,
-.stations-title{
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  -khtml-user-select: none;    /* Konqueror */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* Internet Explorer/Edge */
-  user-select: none;           /* Non-prefixed version, currently
-                                  not supported by any browser */
+.slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(-30px);
+  opacity: 0;
 }
-
-
-/* общий класс для эффекта первого появлении элементов */
-/*.track-author,*/
-/*.track-name,*/
-/*.button-block,*/
-/*.stations-title,*/
-/*.stations-genres {*/
-/*  opacity: 1;*/
-/*  transition-duration: .5s;*/
-/*}*/

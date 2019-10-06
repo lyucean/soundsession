@@ -3,25 +3,24 @@
     <div class="stations-title">{{ title }}</div>
     <div class="stations-genres">{{ genres }}</div>
     <div class="button-block">
-      <div v-if="play" v-on:click="playPause" class="button-play">
-        <div class="button-play__button"></div>
+
+      <div class="button-wrapper">
+        <div v-if="play" v-on:click="playPause" class="button-pause"></div>
+        <div v-else v-on:click="playPause"  class="button-play"></div>
       </div>
-      <div v-else v-on:click="playPause" class="button-pause">
-        <div class="button-pause__button"></div>
-      </div>
-      <!--      <div class="button-previous">-->
-      <!--        <img src="./player_previous.svg" alt>-->
-      <!--      </div>-->
-      <!--      <div class="button-next">-->
-      <!--        <img src="./player_next.svg" alt>-->
-      <!--      </div>-->
-      <!--      <div class="button-volume">-->
-      <!--        <img src="./player_volume.svg" alt>-->
-      <!--      </div>-->
-      <!--      <label class="volume-progress-bar">-->
-      <!--        <input type="range" v-model="volume" min="1" max="100" :style="{background:fill}">-->
-      <!--      </label>-->
+
+
+<!--      <div class="button-previous"></div>-->
+<!--      <div class="button-next"></div>-->
+<!--      <div class="button-volume"></div>-->
+
+      <transition name="slide-fade">
+        <label v-if="play" class="volume-progress-bar">
+          <input type="range" v-model="volume" min="1" max="100">
+        </label>
+      </transition>
     </div>
+
     <div class="track-name">{{ track_name }}</div>
     <div class="track-author">{{ track_author }}</div>
     <div class="timeline"></div>
@@ -55,9 +54,11 @@
     mounted: function () {
       this.track_name = 'The Right Thing'
       this.track_author = 'Moby'
+
+      setTimeout(() => item.opacity = 1, this.appear_delay * i)
     },
     computed: {
-      setVarCSS() {
+      setVarCSS () {
         return {
           '--station-color-background': this.stationTextColor,
           '--station-color-text': this.stationBackgroundColor,
