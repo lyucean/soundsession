@@ -12,9 +12,9 @@
           <player :data="{ station }"/>
         </div>
       </div>
-      <div class="home__playlist">
+      <router-link to="/selectStation" class="home__playlist-link">
         <div class="home__playlist-button"></div>
-      </div>
+      </router-link>
     </div>
   </transition>
 </template>
@@ -40,14 +40,14 @@
       player
     },
     computed: {
-      setVarCSS() {
+      setVarCSS () {
         return {
           '--station-color-background': this.station.colorBackground,
           '--station-color-text': this.station.colorText,
         }
       }
     },
-    mounted() {
+    mounted () {
       document.title = this.station.title
     }
   }

@@ -49,7 +49,7 @@
 }
 
 /* home__playlist */
-.home__playlist {
+.home__playlist-link {
   grid-area: home__playlist;
   background-color: var(--station-color-text);
   text-align: center;
@@ -65,6 +65,10 @@
   mask: url("./play_list_closet.svg") no-repeat center;
 }
 
+.select-station__close-link{
+  cursor: pointer;
+}
+
 /* общий класс для эффекта первого появлении элементов */
 
 .home {
@@ -72,21 +76,21 @@
   transition-duration: 1s;
 }
 
-.home__playlist,
+.home__playlist-link,
 .home__menu-link,
 .home__selector-link {
   opacity: 0.3;
   transition-duration: .5s;
 }
 
-.home__playlist:active,
+.home__playlist-link:active,
 .home__menu:active,
 .home__selector:active {
   opacity: .2;
   transition-duration: .2s;
 }
 
-.home__playlist:hover,
+.home__playlist-link:hover,
 .home__menu-link:hover,
 .home__selector-link:hover {
   opacity: 1;
