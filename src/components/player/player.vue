@@ -50,9 +50,7 @@
     },
     methods: {
       playPause: function () {
-        this.play = !this.play
-        // Показываем элементы управления.
-        this.buttonsDisplay = true
+        this.play = this.buttonsDisplay = !this.play
       },
       // Обработать движение мышью.
       onMouseMove () {
