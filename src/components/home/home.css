@@ -1,3 +1,9 @@
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+  --playlist-button-color: #fff;
+}
+
 .home {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -68,8 +74,6 @@
 .select-station__close-link{
   cursor: pointer;
 }
-
-/* общий класс для эффекта первого появлении элементов */
 
 .home {
   opacity: 1;

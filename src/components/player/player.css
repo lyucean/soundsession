@@ -1,3 +1,8 @@
+:root {
+  --station-color-background: #fff;
+  --station-color-text: #000;
+}
+
 .player {
   display: grid;
   height: auto;
@@ -43,7 +48,6 @@
 .stations-title {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Chrome/Safari/Opera */
-  -khtml-user-select: none; /* Konqueror */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently not supported by any browser */
@@ -80,6 +84,12 @@
   background-color: var(--station-color-background);
 }
 
+.wrapper-animation {
+  display: flex;
+  align-items: stretch;
+  width: auto;
+}
+
 .button-previous {
   -webkit-mask: url("./player_previous.svg") no-repeat left;
   mask: url("./player_previous.svg") no-repeat left;
@@ -90,12 +100,13 @@
   mask: url("./player_next.svg") no-repeat right;
 }
 
-.wrapper-animation {
+.wrapper-volume {
   display: flex;
   align-items: stretch;
   width: auto;
 }
-.button-volume {
+
+.volume-button {
   width: 105px;
   display: flex;
   justify-content: flex-end;
@@ -144,10 +155,10 @@
   cursor: pointer;
 }
 
-.button-volume:hover,
 .button-next:hover,
 .button-previous:hover,
-.volume-progress-bar > input:hover {
+.wrapper-volume:hover .volume-button,
+.wrapper-volume:hover .volume-progress-bar > input {
   opacity: 1;
   transition-duration: 200ms;
 }

@@ -13,10 +13,12 @@
         <div v-if="buttonsDisplay" class="wrapper-animation">
           <div class="button-previous"></div>
           <div class="button-next"></div>
-          <div class="button-volume"></div>
-          <label class="volume-progress-bar">
-            <input type="range" v-model="volume" min="1" max="100">
-          </label>
+          <div class="wrapper-volume">
+            <div class="volume-button"></div>
+            <label class="volume-progress-bar">
+              <input max="100" min="1" type="range" v-model="volume">
+            </label>
+          </div>
         </div>
       </transition>
     </div>
