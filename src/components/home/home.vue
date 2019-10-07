@@ -41,9 +41,18 @@
     },
     computed: {
       setVarCSS () {
+
+        let colorPlaylistBackground = this.station.colorBackground;
+        // если задан отдельный цвет кнопки, применим
+        if (typeof this.station.colorPlaylistButton !== 'undefined') {
+          colorPlaylistBackground = this.station.colorPlaylistButton
+        }
+
         return {
-          '--station-color-background': this.station.colorBackground,
-          '--station-color-text': this.station.colorText,
+          '--background-color': this.station.colorBackground,
+          '--text-color': this.station.colorText,
+          '--playlist-button-color': colorPlaylistBackground,
+
         }
       }
     },

@@ -4,8 +4,8 @@
   grid-template-rows: 114px 5fr 40px;
   grid-template-areas: "home__selector home__menu" "home__player_block home__player_block" "home__playlist home__playlist";
   height: 100vh;
-  background-color: var(--station-color-background);
-  color: var(--station-color-text);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 /* home__selector */
@@ -19,7 +19,7 @@
   height: 30px;
   width: 30px;
   margin: 40px;
-  background-color: var(--station-color-text);
+  background-color: var(--text-color);
   -webkit-mask: url("./selector_station_open.svg") no-repeat center;
   mask: url("./selector_station_open.svg") no-repeat center;
 }
@@ -35,7 +35,7 @@
   height: 10px;
   width: 39px;
   margin: 52px 40px;
-  background-color: var(--station-color-text);
+  background-color: var(--text-color);
   -webkit-mask: url("./menu_icon.svg") no-repeat center;
   mask: url("./menu_icon.svg") no-repeat center;
 }
@@ -51,7 +51,7 @@
 /* home__playlist */
 .home__playlist-link {
   grid-area: home__playlist;
-  background-color: var(--station-color-text);
+  background-color: #000000;
   text-align: center;
   cursor: pointer;
 }
@@ -60,7 +60,7 @@
   margin: 15px auto;
   height: 8px;
   width: 22px;
-  background-color: var(--station-color-background);
+  background-color: var(--playlist-button-color);
   -webkit-mask: url("./play_list_closet.svg") no-repeat center;
   mask: url("./play_list_closet.svg") no-repeat center;
 }

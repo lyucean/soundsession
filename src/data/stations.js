@@ -84,8 +84,9 @@ export default [
     path: 'hard',
     title: 'Hard',
     genres: 'Rock, Metall etc.',
-    colorBackground: '#000000',
+    colorBackground: '#101010',
     colorText: '#FFF',
+    colorPlaylistButton: '#FFF',
     stationSource: '',
   },
   {
