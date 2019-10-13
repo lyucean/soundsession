@@ -1,5 +1,4 @@
 <template>
-  <transition appear appear-active-class="home__effect-appear">
     <div class="home" :style="setVarCSS" @mousemove="onMouseMove">
       <div class="home__selector">
         <router-link to="/selectStation" class="home__selector-link"></router-link>
@@ -16,7 +15,6 @@
         <div class="home__playlist-button"></div>
       </router-link>
     </div>
-  </transition>
 </template>
 
 <style src="./home.css" scoped></style>

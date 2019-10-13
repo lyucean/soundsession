@@ -100,10 +100,10 @@
   opacity: 1;
 }
 
-.home__effect-appear {
-  opacity: 0;
-  transition: opacity .1s;
-}
+/*.home__effect-appear {*/
+/*  opacity: 0;*/
+/*  transition: opacity .1s;*/
+/*}*/
 
 /* моблиьные адаптации */
 @media (min-width: 1281px) {
