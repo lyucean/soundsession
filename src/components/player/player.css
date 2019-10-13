@@ -7,7 +7,6 @@
   display: grid;
   height: auto;
   width: 412px;
-  /*width: auto;*/
 }
 
 .stations-title {
@@ -54,7 +53,7 @@
 }
 
 .wrapper-button {
-  width: 105px;
+  width: 25%;
 }
 
 .button-play {
@@ -64,6 +63,7 @@
   -webkit-mask: url("./player_play.svg") no-repeat center;
   mask: url("./player_play.svg") no-repeat center;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
 }
 
 .button-pause {
@@ -73,6 +73,7 @@
   -webkit-mask: url("./player_pause.svg") no-repeat center;
   mask: url("./player_pause.svg") no-repeat center;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
 }
 
 .button-next,
@@ -82,6 +83,7 @@
   opacity: .3;
   width: 53px;
   background-color: var(--station-color-background);
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
 }
 
 .wrapper-animation {
@@ -169,12 +171,112 @@
 .slide-fade-enter-active {
   transition: all .2s ease;
 }
+
 .slide-fade-leave-active {
   transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
+
 .slide-fade-enter,
 .slide-fade-leave-to
-  /* .slide-fade-leave-active below version 2.1.8 */ {
+  /* .slide-fade-leave-active below version 2.1.8 */
+{
   transform: translateX(-50px);
   opacity: 0;
 }
+
+/* моблиьные адаптации */
+@media (min-width: 1281px) {
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .player {
+    width: 336px;
+  }
+
+  .stations-title {
+    font-size: 46px;
+    line-height: 55px;
+    padding-left: 20px;
+  }
+
+  .stations-genres {
+    font-size: 18px;
+    line-height: 30px;
+    padding-left: 20px;
+  }
+
+  .track-name {
+    margin-top: 50px;
+  }
+
+  .track-name,
+  .track-author {
+    font-size: 22px;
+    line-height: 31px;
+    padding-left: 20px;
+  }
+
+  .wrapper-button {
+    margin-left: 20px;
+  }
+
+  .button-next,
+  .button-previous {
+    margin-left: 20px;
+  }
+
+  .wrapper-volume {
+    display: none;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+
+  .player {
+    width: 280px;
+  }
+
+  .stations-title {
+    font-size: 36px;
+    line-height: 43px;
+    padding-left: 30px;
+  }
+
+  .stations-genres {
+    font-size: 16px;
+    line-height: 26px;
+    padding-left: 30px;
+  }
+
+  .track-name,
+  .track-author {
+
+    font-size: 18px;
+    line-height: 25px;
+    padding-left: 30px;
+  }
+
+  .wrapper-button {
+    margin-left: 30px;
+  }
+
+  .button-next,
+  .button-previous {
+    margin-left: 20px;
+  }
+
+  .wrapper-volume {
+    display: none;
+  }
+
+}
+

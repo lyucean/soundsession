@@ -71,7 +71,7 @@
   mask: url("./play_list_closet.svg") no-repeat center;
 }
 
-.select-station__close-link{
+.select-station__close-link {
   cursor: pointer;
 }
 
@@ -103,4 +103,46 @@
 .home__effect-appear {
   opacity: 0;
   transition: opacity .1s;
+}
+
+/* моблиьные адаптации */
+@media (min-width: 1281px) {
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+
+  .home {
+    grid-template-rows: 60px 1fr 40px;
+  }
+
+  .home__selector-link {
+    margin: 28px;
+  }
+
+  .home__player_block {
+    margin-top: -5%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .home {
+    grid-template-rows: 60px 1fr 40px;
+  }
+
+  .home__selector-link {
+    margin: 30px;
+  }
+
+  .home__player_block {
+    margin-top: -10%;
+  }
 }
