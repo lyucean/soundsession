@@ -42,12 +42,13 @@
         track_name: '',
         track_author: '',
         title: station.title,
-        stationBackgroundColor: station.colorBackground,
-        stationTextColor: station.colorText,
-        volume: 75,
-        play: false,
-        buttonsDisplay: false,
-        mouseWait: null,
+        stationBackgroundColor: station.colorBackground, // цвет фон станции
+        stationTextColor: station.colorText, // цвет текста станции
+        volume: 75, // уровень звука
+        play: false, // статус плеера
+        buttonsDisplay: false, // флаг скрытия элементов
+        mouseWait: null, // таймер скрытия элементов экрана
+        isMobile: null, // примитивное оперделение устройства
       }
     },
     methods: {
@@ -60,8 +61,11 @@
         if (this.play) {
           // Показываем элементы управления.
           this.buttonsDisplay = true
-          // Запускаем таймер.
-          this.runTiming()
+
+          // Запускаем таймер, если это не мобильный
+          if (!this.isMobile) {
+            this.runTiming()
+          }
         }
       },
       // Запустить таймер.
@@ -90,6 +94,9 @@
     created: function() {
       // В родителе емитим это событие
       this.$parent.$on('onMouseMove', this.onMouseMove);
+
+      // вешаем собыите на опредление мобильного, всё что ниже 700 - мобильный
+      this.isMobile = document.documentElement.clientWidth > 700
     }
   }
 </script>
