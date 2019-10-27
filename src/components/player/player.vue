@@ -65,9 +65,15 @@
           this.play = this.buttonsDisplay = false;
           this.player.pause();
         } else {
-          this.play = this.buttonsDisplay = true;
-          this.player.play();
+
           this.player.volume = this.volume / 100;
+          let promise = this.player.play();
+
+          if (promise !== undefined) {
+            promise.then(_ => {
+              this.play = this.buttonsDisplay = true;
+            });
+          }
         }
       },
       // Обработать движение мышью.
@@ -99,6 +105,8 @@
       this.track_author = 'Moby';
       // свяжем контейнер с переменной.
       this.player = document.getElementById('player-audio');
+
+      // попробуем сразу запустить плеер
       this.playPause();
     },
     computed: {
