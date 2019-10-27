@@ -12,7 +12,6 @@
   "dependencies": {
     "ajv": "^6.10.0",
     "ajv-keywords": "^3.4.0",
-    "babel-polyfill": "^6.26.0",
     "normalize-css": "^2.3.1",
     "normalize.css": "^8.0.1",
     "vue": "^2.5.2",
