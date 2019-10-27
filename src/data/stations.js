@@ -22,7 +22,7 @@ export default [
     genres: 'Indie, Rock, Alternative etc',
     colorBackground: '#00ECD0',
     colorText: '#000',
-    stationSource: '',
+    stationSource: 'https://soundsession.center:8443/indie',
   },
   {
     path: 'electronic',
@@ -30,7 +30,7 @@ export default [
     genres: 'Electronic and other music',
     colorBackground: '#CCFF00',
     colorText: '#000',
-    stationSource: '',
+    stationSource: 'https://soundsession.center:8443/electronic',
   },
   {
     path: 'lite',
@@ -38,7 +38,7 @@ export default [
     genres: 'Lounge, Chillout, Downtempo etc.',
     colorBackground: '#7FE102',
     colorText: '#000',
-    stationSource: '',
+    stationSource: 'https://soundsession.center:8443/lite',
   },
   {
     path: 'sweet',
@@ -46,7 +46,7 @@ export default [
     genres: 'Jazz, Bossanova etc.',
     colorBackground: '#FFD9F9',
     colorText: '#000',
-    stationSource: '',
+    stationSource: 'https://soundsession.center:8443/sweet',
   },
   {
     path: 'dark',
@@ -54,7 +54,7 @@ export default [
     genres: 'Bass, Trip hop, Dubstep light etc.',
     colorBackground: '#8B05BA',
     colorText: '#000',
-    stationSource: '',
+    stationSource: 'https://soundsession.center:8443/dark',
   },
   {
     path: 'beat',
@@ -62,7 +62,7 @@ export default [
     genres: 'Rap, Hip-hop, Trap etc.',
     colorBackground: '#8A7153',
     colorText: '#000',
-    stationSource: '',
+    stationSource: 'https://soundsession.center:8443/beat',
   },
   {
     path: 'deep',
@@ -70,7 +70,7 @@ export default [
     genres: 'House, Disco, Dance etc.',
     colorBackground: '#E94600',
     colorText: '#000',
-    stationSource: '',
+    stationSource: 'https://soundsession.center:8443/deep',
   },
   {
     path: 'drum',
@@ -78,7 +78,7 @@ export default [
     genres: 'Drum’n’Bass, Liquid, IDM etc.',
     colorBackground: '#E94600',
     colorText: '#000',
-    stationSource: '',
+    stationSource: 'https://soundsession.center:8443/drum',
   },
   {
     path: 'hard',
@@ -87,7 +87,7 @@ export default [
     colorBackground: '#101010',
     colorText: '#FFF',
     colorPlaylistButton: '#FFF',
-    stationSource: '',
+    stationSource: 'https://soundsession.center:8443/hard',
   },
   {
     path: 'russian',
@@ -95,6 +95,6 @@ export default [
     genres: 'Rock, Metall etc.',
     colorBackground: '#2100EB',
     colorText: '#FFF',
-    stationSource: '',
+    stationSource: 'https://soundsession.center:8443/russian',
   },
 ]

@@ -99,6 +99,7 @@
       this.track_author = 'Moby';
       // свяжем контейнер с переменной.
       this.player = document.getElementById('player-audio');
+      this.playPause();
     },
     computed: {
       setVarCSS () {
@@ -114,7 +115,6 @@
 
       // вешаем собыите на опредление мобильного, всё что ниже 700 - мобильный
       this.isMobile = document.documentElement.clientWidth > 700;
-
     }
   };
 </script>

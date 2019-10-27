@@ -185,9 +185,9 @@
   opacity: 0;
 }
 
-/*.player-audio{*/
-/*  display: none;*/
-/*}*/
+.player-audio {
+  display: none;
+}
 
 /* моблиьные адаптации */
 @media (min-width: 1281px) {
