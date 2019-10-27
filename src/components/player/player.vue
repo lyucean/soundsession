@@ -11,8 +11,8 @@
 
       <transition name="slide-fade">
         <div v-if="buttonsDisplay" class="wrapper-animation">
-          <div class="button-previous"></div>
-          <div class="button-next"></div>
+          <!--          <div class="button-previous"></div>-->
+          <!--          <div class="button-next"></div>-->
           <div class="wrapper-volume">
             <div class="volume-button"></div>
             <label class="volume-progress-bar">
@@ -26,6 +26,7 @@
     <div class="track-name">{{ track_name }}</div>
     <div class="track-author">{{ track_author }}</div>
     <div class="timeline"></div>
+    <audio :src="stationSource" class="player-audio" controls id="player-audio" preload="auto" ref="audio"></audio>
   </div>
 </template>
 
@@ -36,12 +37,13 @@
     name: 'player',
     props: ['data'],
     data () {
-      const station = this.data.station
+      const station = this.data.station;
       return {
         genres: station.genres,
         track_name: '',
         track_author: '',
         title: station.title,
+        stationSource: station.stationSource,
         stationBackgroundColor: station.colorBackground, // цвет фон станции
         stationTextColor: station.colorText, // цвет текста станции
         volume: 75, // уровень звука
@@ -49,55 +51,71 @@
         buttonsDisplay: false, // флаг скрытия элементов
         mouseWait: null, // таймер скрытия элементов экрана
         isMobile: null, // примитивное оперделение устройства
+        player: undefined, // тут будет наш <audio>
+      };
+    },
+    watch: {
+      volume () {
+        this.player.volume = this.volume / 100;
       }
     },
     methods: {
-      playPause: function () {
-        this.play = this.buttonsDisplay = !this.play
+      playPause () {
+        if (this.play) {
+          this.play = this.buttonsDisplay = false;
+          this.player.pause();
+        } else {
+          this.play = this.buttonsDisplay = true;
+          this.player.play();
+          this.player.volume = this.volume / 100;
+        }
       },
       // Обработать движение мышью.
       onMouseMove () {
         // Если полный экран.
         if (this.play) {
           // Показываем элементы управления.
-          this.buttonsDisplay = true
+          this.buttonsDisplay = true;
 
           // Запускаем таймер, если это не мобильный
           if (!this.isMobile) {
-            this.runTiming()
+            this.runTiming();
           }
         }
       },
       // Запустить таймер.
       runTiming () {
         // Всегда очищаем предыдущий таймер при вызове метода.
-        clearTimeout(this.mouseWait)
+        clearTimeout(this.mouseWait);
         // Запускаем новый отсчет.
         this.mouseWait = setTimeout(() => {
           // Скрыть элементы управления.
-          this.buttonsDisplay = false
-        }, 5000)
+          this.buttonsDisplay = false;
+        }, 5000);
       },
     },
-    mounted: function () {
-      this.track_name = 'The Right Thing'
-      this.track_author = 'Moby'
+    mounted () {
+      this.track_name = 'The Right Thing';
+      this.track_author = 'Moby';
+      // свяжем контейнер с переменной.
+      this.player = document.getElementById('player-audio');
     },
     computed: {
       setVarCSS () {
         return {
           '--station-color-background': this.stationTextColor,
           '--station-color-text': this.stationBackgroundColor,
-        }
-      }
+        };
+      },
     },
-    created: function() {
+    created: function () {
       // В родителе емитим это событие
       this.$parent.$on('onMouseMove', this.onMouseMove);
 
       // вешаем собыите на опредление мобильного, всё что ниже 700 - мобильный
-      this.isMobile = document.documentElement.clientWidth > 700
+      this.isMobile = document.documentElement.clientWidth > 700;
+
     }
-  }
+  };
 </script>
 

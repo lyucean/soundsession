@@ -6,7 +6,7 @@ export default [
     genres: 'From POP before RAP',
     colorBackground: '#FFF',
     colorText: '#000',
-    stationSource: '',
+    stationSource: 'https://soundsession.center:8443/all',
   },
   {
     path: 'best',
@@ -14,7 +14,7 @@ export default [
     genres: 'POP, Dance, Electronic etc.',
     colorBackground: '#F4E31C',
     colorText: '#000',
-    stationSource: '',
+    stationSource: 'https://soundsession.center:8443/best',
   },
   {
     path: 'indie',

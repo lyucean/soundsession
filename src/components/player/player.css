@@ -109,7 +109,8 @@
 }
 
 .volume-button {
-  width: 105px;
+  /* width: 105px; когда вернёшь кнопки */
+  width: 55px;
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
@@ -183,6 +184,10 @@
   transform: translateX(-50px);
   opacity: 0;
 }
+
+/*.player-audio{*/
+/*  display: none;*/
+/*}*/
 
 /* моблиьные адаптации */
 @media (min-width: 1281px) {
