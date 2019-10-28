@@ -3,7 +3,7 @@ export default [
   {
     path: 'all',
     title: 'All sound',
-    genres: 'From POP before RAP',
+    genres: 'From POP to Rock',
     colorBackground: '#FFF',
     colorText: '#000',
     stationSource: 'https://soundsession.center:8443/all',
@@ -76,7 +76,7 @@ export default [
     path: 'drum',
     title: 'Drum',
     genres: 'Drum’n’Bass, Liquid, IDM etc.',
-    colorBackground: '#E94600',
+    colorBackground: '#C43617',
     colorText: '#000',
     stationSource: 'https://soundsession.center:8443/drum',
   },
@@ -92,7 +92,7 @@ export default [
   {
     path: 'russian',
     title: 'Russian',
-    genres: 'Rock, Metall etc.',
+    genres: 'Russian music.',
     colorBackground: '#2100EB',
     colorText: '#FFF',
     stationSource: 'https://soundsession.center:8443/russian',
