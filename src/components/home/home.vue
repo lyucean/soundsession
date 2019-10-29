@@ -40,7 +40,9 @@
     computed: {
       setVarCSS () {
 
+        // смени цвет плейлиста
         let colorPlaylistBackground = this.station.colorBackground;
+
         // если задан отдельный цвет кнопки, применим
         if (typeof this.station.colorPlaylistButton !== 'undefined') {
           colorPlaylistBackground = this.station.colorPlaylistButton
@@ -50,7 +52,7 @@
           '--background-color': this.station.colorBackground,
           '--text-color': this.station.colorText,
           '--playlist-button-color': colorPlaylistBackground,
-
+          '--real_height': window.outerHeight + 'px', // нужно, чтоб подогнать высоту на мобильника и не было полосы прокутки
         }
       }
     },
