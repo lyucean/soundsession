@@ -14,6 +14,10 @@ export default new Router({
       redirect: '/select' // по умолчанию запускаем выбор станции
     },
     {
+      path: '/selectStation', // т.к. сменил переменную, редиректим первое время
+      redirect: '/select'
+    },
+    {
       path: '/select',
       name: 'select',
       component: selectStation,
