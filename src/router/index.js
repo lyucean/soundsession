@@ -11,11 +11,11 @@ export default new Router({
   routes: [
     {
       path: '',
-      redirect: '/selectStation' // по умолчанию запускаем выбор станции
+      redirect: '/select' // по умолчанию запускаем выбор станции
     },
     {
-      path: '/selectStation',
-      name: 'selectStation',
+      path: '/select',
+      name: 'select',
       component: selectStation,
     },
     { // 404

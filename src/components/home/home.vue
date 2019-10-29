@@ -1,7 +1,7 @@
 <template>
     <div class="home" :style="setVarCSS" @mousemove="onMouseMove">
       <div class="home__selector">
-        <router-link to="/selectStation" class="home__selector-link"></router-link>
+        <router-link class="home__selector-link" to="/select"></router-link>
       </div>
 <!--      <div class="home__menu">-->
 <!--        <router-link to="/selectStation" class="home__menu-link"></router-link>-->
@@ -11,7 +11,7 @@
           <player :data="{ station }"/>
         </div>
       </div>
-      <router-link to="/selectStation" class="home__playlist-link">
+      <router-link class="home__playlist-link" to="/select">
         <div class="home__playlist-button"></div>
       </router-link>
     </div>
