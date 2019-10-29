@@ -1,103 +1,103 @@
 :root {
-  --background-color: #fff;
-  --text-color: #000;
-  --playlist-button-color: #fff;
+    --background-color: #fff;
+    --text-color: #000;
+    --playlist-button-color: #fff;
 }
 
 .home {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 114px 5fr 40px;
-  grid-template-areas: "home__selector home__menu" "home__player_block home__player_block" "home__playlist home__playlist";
-  height: 100vh;
-  background-color: var(--background-color);
-  color: var(--text-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 114px 5fr 40px;
+    grid-template-areas: "home__selector home__menu" "home__player_block home__player_block" "home__playlist home__playlist";
+    height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 /* home__selector */
 .home__selector {
-  grid-area: home__selector;
+    grid-area: home__selector;
 }
 
 .home__selector-link {
-  display: inline-flex;
-  opacity: 0.5;
-  height: 30px;
-  width: 30px;
-  margin: 40px;
-  background-color: var(--text-color);
-  -webkit-mask: url("./selector_station_open.svg") no-repeat center;
-  mask: url("./selector_station_open.svg") no-repeat center;
+    display: inline-flex;
+    opacity: 0.5;
+    height: 30px;
+    width: 30px;
+    margin: 40px;
+    background-color: var(--text-color);
+    -webkit-mask: url("./selector_station_open.svg") no-repeat center;
+    mask: url("./selector_station_open.svg") no-repeat center;
 }
 
 /* home__menu */
 .home__menu {
-  grid-area: home__menu;
-  text-align: right;
+    grid-area: home__menu;
+    text-align: right;
 }
 
 .home__menu-link {
-  display: inline-flex;
-  height: 10px;
-  width: 39px;
-  margin: 52px 40px;
-  background-color: var(--text-color);
-  -webkit-mask: url("./menu_icon.svg") no-repeat center;
-  mask: url("./menu_icon.svg") no-repeat center;
+    display: inline-flex;
+    height: 10px;
+    width: 39px;
+    margin: 52px 40px;
+    background-color: var(--text-color);
+    -webkit-mask: url("./menu_icon.svg") no-repeat center;
+    mask: url("./menu_icon.svg") no-repeat center;
 }
 
 /* home__player */
 .home__player_block {
-  display: grid;
-  grid-area: home__player_block;
-  align-content: center;
-  justify-content: center;
+    display: grid;
+    grid-area: home__player_block;
+    align-content: center;
+    justify-content: center;
 }
 
 /* home__playlist */
 .home__playlist-link {
-  grid-area: home__playlist;
-  background-color: #000000;
-  text-align: center;
-  cursor: pointer;
+    grid-area: home__playlist;
+    background-color: #000000;
+    text-align: center;
+    cursor: pointer;
 }
 
 .home__playlist-button {
-  margin: 15px auto;
-  height: 8px;
-  width: 22px;
-  background-color: var(--playlist-button-color);
-  -webkit-mask: url("./play_list_closet.svg") no-repeat center;
-  mask: url("./play_list_closet.svg") no-repeat center;
+    margin: 15px auto;
+    height: 8px;
+    width: 22px;
+    background-color: var(--playlist-button-color);
+    -webkit-mask: url("./play_list_closet.svg") no-repeat center;
+    mask: url("./play_list_closet.svg") no-repeat center;
 }
 
 .select-station__close-link {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .home {
-  opacity: 1;
-  transition-duration: 1s;
+    opacity: 1;
+    transition-duration: 1s;
 }
 
 .home__playlist-link,
 .home__menu-link,
 .home__selector-link {
-  opacity: 0.3;
-  transition-duration: .5s;
+    opacity: 0.3;
+    transition-duration: .5s;
 }
 
 .home__playlist-link:active,
 .home__menu:active,
 .home__selector:active {
-  opacity: .2;
-  transition-duration: .2s;
+    opacity: .2;
+    transition-duration: .2s;
 }
 
 .home__playlist-link:hover,
 .home__menu-link:hover,
 .home__selector-link:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 /*.home__effect-appear {*/
@@ -120,29 +120,32 @@
 
 @media (min-width: 375px) and (max-width: 767px) {
 
-  .home {
-    grid-template-rows: 60px 1fr 40px;
-  }
+    .home {
+        grid-template-rows: 60px 1fr 40px;
+        height: calc(100vh - 56px);
+    }
 
-  .home__selector-link {
-    margin: 28px;
-  }
+    .home__selector-link {
+        margin: 28px;
+    }
 
-  .home__player_block {
-    margin-top: -5%;
-  }
+    .home__player_block {
+        margin-top: -5%;
+    }
 }
 
 @media (min-width: 320px) and (max-width: 374px) {
-  .home {
-    grid-template-rows: 60px 1fr 40px;
-  }
 
-  .home__selector-link {
-    margin: 30px;
-  }
+    .home {
+        grid-template-rows: 60px 1fr 40px;
+        height: calc(100vh - 56px);
+    }
 
-  .home__player_block {
-    margin-top: -10%;
-  }
+    .home__selector-link {
+        margin: 30px;
+    }
+
+    .home__player_block {
+        margin-top: -10%;
+    }
 }
