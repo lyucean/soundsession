@@ -13,11 +13,12 @@ module.exports = {
     proxyTable: {},
 
     // Various Dev Server settings
-    host: 'sound.loc', // can be overwritten by process.env.HOST
-    port: 80, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    host: 'localhost', // can be overwritten by process.env.HOST
+    port: 1080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
+    sockPort: 1080,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
     
