@@ -11,7 +11,7 @@ export default new Router({
   routes: [
     {
       path: '',
-      redirect: '/all' // редирект на All sound с главной
+      redirect: '/selectStation' // по умолчанию запускаем выбор станции
     },
     {
       path: '/selectStation',
