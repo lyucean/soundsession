@@ -1,8 +1,11 @@
 <template>
   <div class="select-station">
-    <div class="select-station__close">
-      <router-link to="/" class="select-station__close-link">
+    <div class="select-station__close" v-if="linkBackShow">
+      <router-link
+        :to="linkBack"
+        class="select-station__close-link">
         <img class="select-station__close-icon"
+             alt="Button Back"
              src="./selector_station_close.svg">
       </router-link>
     </div>
@@ -37,7 +40,9 @@
           return el
         }),
         appear_delay: 50, // время задержки перед появлением/исчезновением каждого элемента
-        hoverEffectIsActive: false
+        hoverEffectIsActive: false,
+        linkBack: '/all', // на всякий по умолчанию /all
+        linkBackShow: false,
       }
     },
     mounted: function () {
@@ -67,6 +72,16 @@
         }, this.appear_delay * i)
       }, this)
 
+    },
+    beforeRouteEnter (to, from, next) {
+      next(vm => {
+        // экземпляр компонента доступен как `vm`
+        // отслеживание, показывать ли ссылку назад
+        if (from.path !== '/') {
+          vm.linkBack = from.path
+          vm.linkBackShow = true
+        }
+      })
     },
   }
 </script>

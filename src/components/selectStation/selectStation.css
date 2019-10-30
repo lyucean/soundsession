@@ -2,13 +2,13 @@
 .select-station {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 114px 1fr;
   grid-template-areas: "select-station__close" "select-station__grid";
   height: 100vh;
 }
 
 .select-station__close {
   grid-area: select-station__close;
+    height: 114px;
 }
 
 .select-station__close-icon {
@@ -32,6 +32,7 @@
 
 .select-station__grid {
   grid-area: select-station__grid;
+    height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
