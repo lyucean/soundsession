@@ -2,12 +2,12 @@
 .select-station {
     display: flex;
     grid-template-columns: 1fr;
-    /*grid-template-areas: "select-station__close" "select-station__grid";*/
     height: 100vh;
+    flex-direction: column;
 }
 
 .select-station__close {
-    /*grid-area: select-station__close;*/
+    flex-direction: column;
     height: 114px;
 }
 
@@ -31,7 +31,6 @@
 }
 
 .select-station__grid {
-    /*grid-area: select-station__grid;*/
     flex-grow: 3;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
