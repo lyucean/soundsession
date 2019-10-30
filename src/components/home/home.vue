@@ -52,7 +52,7 @@
           '--background-color': this.station.colorBackground,
           '--text-color': this.station.colorText,
           '--playlist-button-color': colorPlaylistBackground,
-          '--real_height': window.innerHeight + 'px', // нужно, чтоб подогнать высоту на мобильника и не было полосы прокутки
+          '--real_height': document.documentElement.clientHeight + 'px', // нужно, чтоб подогнать высоту на мобильника и не было полосы прокутки
         }
       }
     },

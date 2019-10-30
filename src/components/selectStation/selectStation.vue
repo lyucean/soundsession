@@ -1,5 +1,5 @@
 <template>
-  <div class="select-station">
+  <div :style="setVarCSS" class="select-station">
     <div class="select-station__close" v-if="linkBackShow">
       <router-link
         :to="linkBack"
@@ -82,6 +82,13 @@
           vm.linkBackShow = true
         }
       })
+    },
+    computed: {
+      setVarCSS () {
+        return {
+          '--real_height': document.documentElement.clientHeight + 'px', // нужно, чтоб подогнать высоту на мобильника и не было полосы прокутки
+        }
+      }
     },
   }
 </script>
