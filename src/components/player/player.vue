@@ -48,32 +48,36 @@
         stationTextColor: station.colorText, // цвет текста станции
         volume: 75, // уровень звука
         playStatus: false, // статус плеера
+        playReady: true, // готов ли плеер к командам и обрабатывает предыдущую
         buttonsDisplay: false, // флаг скрытия элементов
         mouseWait: null, // таймер скрытия элементов экрана
         isMobile: null, // примитивное оперделение устройства
-        player: undefined, // тут будет наш <audio>
+        audio: undefined, // тут будет наш <audio>
       }
     },
     watch: {
       volume () {
-        this.player.volume = this.volume / 100
+        this.audio.volume = this.volume / 100
       }
     },
     methods: {
       play () {
-        this.player.volume = this.volume / 100
-        let promise = this.player.play()
+        this.audio.volume = this.volume / 100
+        this.playStatus = this.buttonsDisplay = true
 
-        if (promise !== undefined) {
-          promise.then(_ => {
-            this.playStatus = this.buttonsDisplay = true
+        // нужен промис, инече, если поставить на паузу плеер, кода он ещё не заигра, выпадет ошибка
+        if (this.playReady) {
+          this.playReady = false
+          this.audio.play().then(_ => {
+            this.playReady = true
           })
         }
       },
       pause () {
-        this.playStatus = this.buttonsDisplay = false
-        this.player.pause()
-
+        if (this.playReady) {
+          this.audio.pause()
+          this.playStatus = this.buttonsDisplay = false
+        }
       },
       // Обработать движение мышью.
       onMouseMove () {
@@ -103,7 +107,7 @@
       this.track_name = 'The Right Thing'
       this.track_author = 'Moby'
       // свяжем контейнер с переменной.
-      this.player = document.getElementById('player-audio')
+      this.audio = document.getElementById('player-audio')
     },
     computed: {
       setVarCSS () {
