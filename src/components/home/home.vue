@@ -64,6 +64,15 @@
       onMouseMove() {
         this.$emit('onMouseMove');
       }
-    }
+    },
+    beforeRouteEnter (to, from, next) {
+      next(vm => {
+        // если это не первая загрузка страницы, а переход, то запустим плеер, если он не запщен
+        if (from.path !== '/') {
+          // Пробросим собыите запустить плеер
+          vm.$emit('play')
+        }
+      })
+    },
   }
 </script>

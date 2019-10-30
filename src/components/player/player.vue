@@ -5,8 +5,8 @@
     <div class="button-block">
 
       <div class="wrapper-button">
-        <div v-if="play" v-on:click="playPause" class="button-pause"></div>
-        <div v-else v-on:click="playPause" class="button-play"></div>
+        <div class="button-pause" v-if="playStatus" v-on:click="pause"></div>
+        <div class="button-play" v-else v-on:click="play"></div>
       </div>
 
       <transition name="slide-fade">
@@ -37,7 +37,7 @@
     name: 'player',
     props: ['data'],
     data () {
-      const station = this.data.station;
+      const station = this.data.station
       return {
         genres: station.genres,
         track_name: '',
@@ -47,83 +47,80 @@
         stationBackgroundColor: station.colorBackground, // цвет фон станции
         stationTextColor: station.colorText, // цвет текста станции
         volume: 75, // уровень звука
-        play: false, // статус плеера
+        playStatus: false, // статус плеера
         buttonsDisplay: false, // флаг скрытия элементов
         mouseWait: null, // таймер скрытия элементов экрана
         isMobile: null, // примитивное оперделение устройства
         player: undefined, // тут будет наш <audio>
-      };
+      }
     },
     watch: {
       volume () {
-        this.player.volume = this.volume / 100;
+        this.player.volume = this.volume / 100
       }
     },
     methods: {
-      playPause () {
-        if (this.play) {
-          this.play = this.buttonsDisplay = false;
-          this.player.pause();
-        } else {
+      play () {
+        this.player.volume = this.volume / 100
+        let promise = this.player.play()
 
-          this.player.volume = this.volume / 100;
-          let promise = this.player.play();
-
-          if (promise !== undefined) {
-            promise.then(_ => {
-              this.play = this.buttonsDisplay = true;
-            });
-          }
+        if (promise !== undefined) {
+          promise.then(_ => {
+            this.playStatus = this.buttonsDisplay = true
+          })
         }
+      },
+      pause () {
+        this.playStatus = this.buttonsDisplay = false
+        this.player.pause()
+
       },
       // Обработать движение мышью.
       onMouseMove () {
         // Если полный экран.
-        if (this.play) {
+        if (this.playStatus) {
           // Показываем элементы управления.
-          this.buttonsDisplay = true;
+          this.buttonsDisplay = true
 
           // Запускаем таймер, если это не мобильный
           if (!this.isMobile) {
-            this.runTiming();
+            this.runTiming()
           }
         }
       },
       // Запустить таймер.
       runTiming () {
         // Всегда очищаем предыдущий таймер при вызове метода.
-        clearTimeout(this.mouseWait);
+        clearTimeout(this.mouseWait)
         // Запускаем новый отсчет.
         this.mouseWait = setTimeout(() => {
           // Скрыть элементы управления.
-          this.buttonsDisplay = false;
-        }, 5000);
+          this.buttonsDisplay = false
+        }, 5000)
       },
     },
     mounted () {
-      this.track_name = 'The Right Thing';
-      this.track_author = 'Moby';
+      this.track_name = 'The Right Thing'
+      this.track_author = 'Moby'
       // свяжем контейнер с переменной.
-      this.player = document.getElementById('player-audio');
-
-      // попробуем сразу запустить плеер
-      this.playPause();
+      this.player = document.getElementById('player-audio')
     },
     computed: {
       setVarCSS () {
         return {
           '--station-color-background': this.stationTextColor,
           '--station-color-text': this.stationBackgroundColor,
-        };
+        }
       },
     },
     created: function () {
-      // В родителе емитим это событие
-      this.$parent.$on('onMouseMove', this.onMouseMove);
+      // В родителе емитим события
+      this.$parent.$on('onMouseMove', this.onMouseMove)
+      this.$parent.$on('play', this.play)
 
       // вешаем собыите на опредление мобильного, всё что ниже 700 - мобильный
-      this.isMobile = document.documentElement.clientWidth > 700;
+      this.isMobile = document.documentElement.clientWidth > 700
     }
-  };
+  }
 </script>
 
