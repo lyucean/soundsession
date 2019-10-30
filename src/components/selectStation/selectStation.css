@@ -1,101 +1,101 @@
 /* Струкутра страницы */
 .select-station {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "select-station__close" "select-station__grid";
-  height: 100vh;
+    display: flex;
+    grid-template-columns: 1fr;
+    /*grid-template-areas: "select-station__close" "select-station__grid";*/
+    height: 100vh;
 }
 
 .select-station__close {
-  grid-area: select-station__close;
+    /*grid-area: select-station__close;*/
     height: 114px;
 }
 
 .select-station__close-icon {
-  margin: 40px;
+    margin: 40px;
 }
 
 .select-station__close-link {
-  display: inline-flex;
-  opacity: 0.3;
-  transition-duration: 200ms;
-  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+    display: inline-flex;
+    opacity: 0.3;
+    transition-duration: 200ms;
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
 }
 
 .select-station__close-link:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .select-station__close-link:active {
-  opacity: .2;
+    opacity: .2;
 }
 
 .select-station__grid {
-  grid-area: select-station__grid;
-    height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+    /*grid-area: select-station__grid;*/
+    flex-grow: 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 /* Станции */
 .station {
-  display: grid;
-  align-items: center;
-  cursor: pointer;
-  transition-duration: 400ms;
-  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+    display: grid;
+    align-items: center;
+    cursor: pointer;
+    transition-duration: 400ms;
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
 }
 
 .station:hover {
-  transition-duration: 400ms;
+    transition-duration: 400ms;
 }
 
 .station__link {
-  text-decoration: none;
-  height: 100%;
-  display: grid;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+    text-decoration: none;
+    height: 100%;
+    display: grid;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .station_wrap {
-  height: auto;
-  width: auto;
-  margin-left: 15%;
-  margin-right: 10%;
-  text-decoration: none;
+    height: auto;
+    width: auto;
+    margin-left: 15%;
+    margin-right: 10%;
+    text-decoration: none;
 }
 
 .station__title {
-  font-size: 46px;
-  line-height: 68px;
+    font-size: 46px;
+    line-height: 68px;
 }
 
 .station__genres {
-  font-size: 18px;
-  line-height: 30px;
+    font-size: 18px;
+    line-height: 30px;
 }
 
 .hover_effect:hover .station {
-  opacity: .3 !important;
+    opacity: .3 !important;
 }
 
 .hover_effect:hover .station:hover {
-  opacity: 1 !important;
+    opacity: 1 !important;
 }
 
 /* запрет на выделение всего */
 .select-station__close,
 .station__title,
 .station__genres {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Chrome/Safari/Opera */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none;
-  /* Non-prefixed version, currently
-                         not supported by any browser */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                           not supported by any browser */
 }
 
 /* моблиьные адаптации */
@@ -115,39 +115,39 @@
 }
 
 @media (min-width: 375px) and (max-width: 767px) {
-  /*@media (min-width: 320px) and (max-width: 374px)*/
-  .station {
-    margin-top: -1px;
-  }
+    /*@media (min-width: 320px) and (max-width: 374px)*/
+    .station {
+        margin-top: -1px;
+    }
 
-  .select-station {
-    grid-template-rows: 90px 1fr;
-  }
+    .select-station {
+        grid-template-rows: 90px 1fr;
+    }
 
-  .select-station__close-icon {
-    margin: 30px;
-  }
+    .select-station__close-icon {
+        margin: 30px;
+    }
 
-  .select-station__grid {
-    grid-template-columns: 1fr;
-  }
+    .select-station__grid {
+        grid-template-columns: 1fr;
+    }
 
-  .station__title {
-    font-size: 36px;
-    line-height: 120%;
-  }
+    .station__title {
+        font-size: 36px;
+        line-height: 120%;
+    }
 
-  .station_wrap {
-    margin-left: 9%;
-    margin-right: 9%;
-  }
+    .station_wrap {
+        margin-left: 9%;
+        margin-right: 9%;
+    }
 
-  .station__genres {
-    font-size: 16px;
-    line-height: 26px;
-  }
+    .station__genres {
+        font-size: 16px;
+        line-height: 26px;
+    }
 
-  .station__link {
-    height: 120px;
-  }
+    .station__link {
+        height: 120px;
+    }
 }
