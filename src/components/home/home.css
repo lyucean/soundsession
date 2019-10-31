@@ -101,11 +101,18 @@
     opacity: 1;
 }
 
-/*.home__effect-appear {*/
-/*  opacity: 0;*/
-/*  transition: opacity .1s;*/
-/*}*/
-
+/* запрет на выделение всего */
+.home__selector,
+.home__selector-link,
+.home__playlist-link {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                           not supported by any browser */
+}
 /* моблиьные адаптации */
 @media (min-width: 1281px) {
 }
@@ -114,9 +121,15 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+    .home {
+        height: var(--real_height);
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .home {
+        height: var(--real_height);
+    }
 }
 
 @media (min-width: 375px) and (max-width: 767px) {
@@ -124,6 +137,10 @@
     .home {
         grid-template-rows: 60px 1fr 40px;
         height: var(--real_height);
+    }
+
+    .home__selector {
+        height: 85px;
     }
 
     .home__selector-link {
@@ -139,7 +156,11 @@
 
     .home {
         grid-template-rows: 60px 1fr 40px;
-        height: calc(var(--real_height, 1vh) * 100);
+        height: var(--real_height);
+    }
+
+    .home__selector {
+        height: 90px;
     }
 
     .home__selector-link {
@@ -148,5 +169,12 @@
 
     .home__player_block {
         margin-top: -10%;
+    }
+}
+
+/* планшет */
+@media (max-height: 500px) {
+    .home {
+        grid-template-rows: 20px 1fr 40px;
     }
 }

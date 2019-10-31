@@ -43,9 +43,12 @@
         hoverEffectIsActive: false,
         linkBack: '/all', // на всякий по умолчанию /all
         linkBackShow: false,
+        realHeight: document.documentElement.clientHeight,
       }
     },
     mounted: function () {
+      // смени заголовок
+      document.title = 'Choose your mood :)'
 
       // анимация разворачивания списков
       this.items.forEach(function (item, i) {
@@ -54,6 +57,12 @@
 
       // включение эффекта наведения на станцию
       this.hoverEffectIsActive = true
+
+      // добавим событие на поворот экрана
+      window.addEventListener('resize', this.recalculateHeight, false)
+    },
+    beforeDestroy () {
+      window.removeEventListener('resize', this.recalculateHeight)
     },
     beforeRouteLeave (to, from, next) {
 
@@ -83,10 +92,17 @@
         }
       })
     },
+    methods: {
+      // Пробросим собыите срабатывания мыши
+      recalculateHeight () {
+        console.log(window.outerHeight)
+        this.realHeight = window.outerHeight // изменим высотку экрана
+      }
+    },
     computed: {
       setVarCSS () {
         return {
-          '--real_height': document.documentElement.clientHeight + 'px', // нужно, чтоб подогнать высоту на мобильника и не было полосы прокутки
+          '--real_height': this.realHeight + 'px', // нужно, чтоб подогнать высоту на мобильника и не было полосы прокутки
         }
       }
     },

@@ -110,14 +110,19 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+    .select-station {
+        height: var(--real_height);
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .select-station {
+        height: var(--real_height);
+    }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
     /*@media (min-width: 320px) and (max-width: 374px)*/
-
     .select-station {
         height: var(--real_height);
         grid-template-rows: 90px 1fr;
@@ -152,5 +157,27 @@
 
     .station__link {
         height: 120px;
+    }
+}
+
+/* планшет */
+@media (max-height: 500px) {
+
+    .select-station__close {
+        height: 80px;
+    }
+
+    .select-station__close-icon {
+        margin: 30px 20px 20px 30px;
+    }
+
+    .station__title {
+        font-size: 26px;
+        line-height: 120%;
+    }
+
+    .station__genres {
+        font-size: 12px;
+        line-height: 20px;
     }
 }

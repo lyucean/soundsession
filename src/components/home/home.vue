@@ -1,20 +1,20 @@
 <template>
-    <div class="home" :style="setVarCSS" @mousemove="onMouseMove">
-      <div class="home__selector">
-        <router-link class="home__selector-link" to="/select"></router-link>
-      </div>
-<!--      <div class="home__menu">-->
-<!--        <router-link to="/selectStation" class="home__menu-link"></router-link>-->
-<!--      </div>-->
-      <div class="home__player_block">
-        <div class="home__player">
-          <player :data="{ station }"/>
-        </div>
-      </div>
-      <router-link class="home__playlist-link" to="/select">
-        <div class="home__playlist-button"></div>
-      </router-link>
+  <div :style="setVarCSS" @mousemove="onMouseMove" @orientationchange="setVarCSS" class="home">
+    <div class="home__selector">
+      <router-link class="home__selector-link" to="/select"></router-link>
     </div>
+    <!--      <div class="home__menu">-->
+    <!--        <router-link to="/selectStation" class="home__menu-link"></router-link>-->
+    <!--      </div>-->
+    <div class="home__player_block">
+      <div class="home__player">
+        <player :data="{ station }"/>
+      </div>
+    </div>
+    <router-link class="home__playlist-link" to="/select">
+      <div class="home__playlist-button"></div>
+    </router-link>
+  </div>
 </template>
 
 <style src="./home.css" scoped></style>
@@ -32,6 +32,7 @@
             return item
           }
         }),
+        realHeight: document.documentElement.clientHeight,
       }
     },
     components: {
@@ -41,7 +42,7 @@
       setVarCSS () {
 
         // смени цвет плейлиста
-        let colorPlaylistBackground = this.station.colorBackground;
+        let colorPlaylistBackground = this.station.colorBackground
 
         // если задан отдельный цвет кнопки, применим
         if (typeof this.station.colorPlaylistButton !== 'undefined') {
@@ -52,17 +53,29 @@
           '--background-color': this.station.colorBackground,
           '--text-color': this.station.colorText,
           '--playlist-button-color': colorPlaylistBackground,
-          '--real_height': document.documentElement.clientHeight + 'px', // нужно, чтоб подогнать высоту на мобильника и не было полосы прокутки
+          '--real_height': this.realHeight + 'px', // нужно, чтоб подогнать высоту на мобильника и не было полосы прокутки
         }
       }
     },
     mounted () {
+      // смени заголовок на станцию
       document.title = this.station.title
+
+      // добавим событие на поворот экрана
+      window.addEventListener('resize', this.recalculateHeight, false)
+    },
+    beforeDestroy () {
+      window.removeEventListener('resize', this.recalculateHeight)
     },
     methods: {
       // Пробросим собыите срабатывания мыши
-      onMouseMove() {
-        this.$emit('onMouseMove');
+      onMouseMove () {
+        this.$emit('onMouseMove')
+      },
+      // Пробросим собыите срабатывания мыши
+      recalculateHeight () {
+        console.log(window.outerHeight)
+        this.realHeight = window.outerHeight // изменим высотку экрана
       }
     },
     beforeRouteEnter (to, from, next) {
