@@ -6,9 +6,14 @@
 .select-station {
     display: flex;
     grid-template-columns: 1fr;
-    height: 720px;
-    overflow: scroll;
+    height: 100vh;
+    overflow: auto;
     flex-direction: column;
+}
+
+.select-station::-webkit-scrollbar {
+    width: 0;
+    background: rgba(255, 255, 255, 0.0);
 }
 
 .select-station__close {
@@ -38,6 +43,7 @@
 .select-station__grid {
     flex-grow: 3;
     display: grid;
+    height: 100vh;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -117,6 +123,7 @@
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     .select-station {
+        overflow: scroll;
         height: var(--real_height);
     }
 }
@@ -124,6 +131,7 @@
 @media (min-width: 320px) and (max-width: 767px) {
     /*@media (min-width: 320px) and (max-width: 374px)*/
     .select-station {
+        overflow: scroll;
         height: var(--real_height);
         grid-template-rows: 90px 1fr;
     }
