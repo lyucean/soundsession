@@ -193,4 +193,12 @@
     .home {
         grid-template-rows: 20px 1fr 40px;
     }
+
+    .home__selector {
+        height: 80px;
+    }
+
+    .home__selector-link {
+        margin: 30px 20px 20px 30px;
+    }
 }

@@ -1,6 +1,6 @@
 <template>
   <div :style="setVarCSS" class="select-station">
-    <div class="select-station__close" v-if="linkBackShow">
+    <div class="select-station__close">
       <router-link
         :to="linkBack"
         class="select-station__close-link">
@@ -42,7 +42,6 @@
         appear_delay: 50, // время задержки перед появлением/исчезновением каждого элемента
         hoverEffectIsActive: false,
         linkBack: '/all', // на всякий по умолчанию /all
-        linkBackShow: false,
         realHeight: document.documentElement.clientHeight,
       }
     },
@@ -84,19 +83,19 @@
     },
     beforeRouteEnter (to, from, next) {
       next(vm => {
-        // экземпляр компонента доступен как `vm`
-        // отслеживание, показывать ли ссылку назад
+        // Если это первый запуск, тогда кнопка назад это /all
         if (from.path !== '/') {
           vm.linkBack = from.path
-          vm.linkBackShow = true
+        } else {
+          vm.linkBack = '/all'
         }
       })
     },
     methods: {
       // Пробросим собыите срабатывания мыши
       recalculateHeight () {
-        console.log(window.outerHeight)
-        this.realHeight = window.outerHeight // изменим высотку экрана
+        // пересчитаем высоту экрана, window.outerHeight не работает
+        this.realHeight = document.documentElement.clientHeight // изменим высотку экрана
       }
     },
     computed: {
