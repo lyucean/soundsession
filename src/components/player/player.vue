@@ -112,13 +112,16 @@
       this.audio = document.getElementById('player-audio')
 
       // Запускаем обновление название трека каждые 5 секунд.
-      this.timerLoadingTrackName = setTimeout(() => {
+      this.timerLoadingTrackName = setInterval(() => {
+
+        // подгрузка или вывод ошибок
         this.axios.get(this.UrlTrackName).then((response) => {
           this.track_name = response.data[0].title
           this.track_author = response.data[0].artist
         }).catch(error => {
-          console.log(error)
+          // console.log(error)
         }).finally(() => (this.loading = false))
+
       }, this.timerLoadingTrackNamePeriod * 1000)
 
     },
