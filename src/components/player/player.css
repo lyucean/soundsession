@@ -23,6 +23,9 @@
 .track-author {
   font-size: 22px;
   line-height: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .track-name {
