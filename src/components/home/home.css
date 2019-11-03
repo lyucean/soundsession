@@ -110,8 +110,7 @@
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
-    /* Non-prefixed version, currently
-                           not supported by any browser */
+    /* Non-prefixed version, currently not supported by any browser */
 }
 /* моблиьные адаптации */
 @media (min-width: 1281px) {
