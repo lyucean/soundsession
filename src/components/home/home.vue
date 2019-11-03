@@ -11,9 +11,9 @@
         <player :data="{ station }"/>
       </div>
     </div>
-    <router-link class="home__playlist-link" to="/select">
-      <div class="home__playlist-button"></div>
-    </router-link>
+    <!--    <router-link class="home__playlist-link" to="/select">-->
+    <!--      <div class="home__playlist-button"></div>-->
+    <!--    </router-link>-->
   </div>
 </template>
 
