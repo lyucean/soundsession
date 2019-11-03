@@ -43,6 +43,7 @@
         track_name: '',
         track_author: '',
         title: station.title,
+        path: station.path, //
         stationSource: station.stationSource,
         stationBackgroundColor: station.colorBackground, // цвет фон станции
         stationTextColor: station.colorText, // цвет текста станции
@@ -51,8 +52,10 @@
         playReady: true, // готов ли плеер к командам и обрабатывает предыдущую
         buttonsDisplay: false, // флаг скрытия элементов
         mouseWait: null, // таймер скрытия элементов экрана
+        timerLoadingTrackName: null, // таймер загрузки названия трека
         isMobile: null, // примитивное оперделение устройства
         audio: undefined, // тут будет наш <audio>
+        loading: true, // анимация ожидания загрузки
       }
     },
     watch: {
@@ -103,11 +106,25 @@
         }, 5000)
       },
     },
-    mounted () {
-      this.track_name = 'The Right Thing'
-      this.track_author = 'Moby'
+    mounted: function () {
+      this.track_name = 'Loading...'
+      this.track_author = 'stantion'
       // свяжем контейнер с переменной.
       this.audio = document.getElementById('player-audio')
+
+      // Запускаем обновление название трека каждые 5 секунд.
+      this.mouseWait = setTimeout(() => {
+        this.axios.get('https://soundsession.center/metadata.php?station=' + this.path).then((response) => {
+          this.track_name = response.data[0].title
+          this.track_author = response.data[0].artist
+        }).catch(error => {
+          console.log(error)
+        }).finally(() => (this.loading = false))
+      }, 5000)
+
+    },
+    beforeDestroy () {
+      clearTimeout(this.timerLoadingTrackName) // очистим обновление трека
     },
     computed: {
       setVarCSS () {
