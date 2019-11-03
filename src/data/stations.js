@@ -6,7 +6,8 @@ export default [
     genres: 'From POP to Rock',
     colorBackground: '#FFF',
     colorText: '#000',
-    stationSource: 'https://soundsession.center:8443/all',
+    UrlSource: 'https://soundsession.center:8443/all',
+    UrlTrackName: 'https://soundsession.center/metadata.php?station=all',
   },
   {
     path: 'best',
@@ -14,7 +15,8 @@ export default [
     genres: 'POP, Dance, Electronic etc.',
     colorBackground: '#F4E31C',
     colorText: '#000',
-    stationSource: 'https://soundsession.center:8443/best',
+    UrlSource: 'https://soundsession.center:8443/best',
+    UrlTrackName: 'https://soundsession.center/metadata.php?station=best',
   },
   {
     path: 'indie',
@@ -22,7 +24,8 @@ export default [
     genres: 'Indie, Rock, Alternative etc',
     colorBackground: '#00ECD0',
     colorText: '#000',
-    stationSource: 'https://soundsession.center:8443/indie',
+    UrlSource: 'https://soundsession.center:8443/indie',
+    UrlTrackName: 'https://soundsession.center/metadata.php?station=indie',
   },
   {
     path: 'electronic',
@@ -30,7 +33,8 @@ export default [
     genres: 'Electronic and other music',
     colorBackground: '#CCFF00',
     colorText: '#000',
-    stationSource: 'https://soundsession.center:8443/electronic',
+    UrlSource: 'https://soundsession.center:8443/electronic',
+    UrlTrackName: 'https://soundsession.center/metadata.php?station=electronic',
   },
   {
     path: 'lite',
@@ -38,7 +42,8 @@ export default [
     genres: 'Lounge, Chillout, Downtempo etc.',
     colorBackground: '#7FE102',
     colorText: '#000',
-    stationSource: 'https://soundsession.center:8443/lite',
+    UrlSource: 'https://soundsession.center:8443/lite',
+    UrlTrackName: 'https://soundsession.center/metadata.php?station=lite',
   },
   {
     path: 'sweet',
@@ -46,7 +51,8 @@ export default [
     genres: 'Jazz, Bossanova etc.',
     colorBackground: '#FFD9F9',
     colorText: '#000',
-    stationSource: 'https://soundsession.center:8443/sweet',
+    UrlSource: 'https://soundsession.center:8443/sweet',
+    UrlTrackName: 'https://soundsession.center/metadata.php?station=sweet',
   },
   {
     path: 'dark',
@@ -54,7 +60,8 @@ export default [
     genres: 'Bass, Trip hop, Dubstep light etc.',
     colorBackground: '#8B05BA',
     colorText: '#000',
-    stationSource: 'https://soundsession.center:8443/dark',
+    UrlSource: 'https://soundsession.center:8443/dark',
+    UrlTrackName: 'https://soundsession.center/metadata.php?station=dark',
   },
   {
     path: 'beat',
@@ -62,7 +69,8 @@ export default [
     genres: 'Rap, Hip-hop, Trap etc.',
     colorBackground: '#8A7153',
     colorText: '#000',
-    stationSource: 'https://soundsession.center:8443/beat',
+    UrlSource: 'https://soundsession.center:8443/beat',
+    UrlTrackName: 'https://soundsession.center/metadata.php?station=beat',
   },
   {
     path: 'deep',
@@ -70,7 +78,8 @@ export default [
     genres: 'House, Disco, Dance etc.',
     colorBackground: '#E94600',
     colorText: '#000',
-    stationSource: 'https://soundsession.center:8443/deep',
+    UrlSource: 'https://soundsession.center:8443/deep',
+    UrlTrackName: 'https://soundsession.center/metadata.php?station=deep',
   },
   {
     path: 'drum',
@@ -78,7 +87,8 @@ export default [
     genres: 'Drum’n’Bass, Liquid, IDM etc.',
     colorBackground: '#C43617',
     colorText: '#000',
-    stationSource: 'https://soundsession.center:8443/drum',
+    UrlSource: 'https://soundsession.center:8443/drum',
+    UrlTrackName: 'https://soundsession.center/metadata.php?station=drum',
   },
   {
     path: 'hard',
@@ -87,7 +97,8 @@ export default [
     colorBackground: '#101010',
     colorText: '#FFF',
     colorPlaylistButton: '#FFF',
-    stationSource: 'https://soundsession.center:8443/hard',
+    UrlSource: 'https://soundsession.center:8443/hard',
+    UrlTrackName: 'https://soundsession.center/metadata.php?station=hard',
   },
   {
     path: 'russian',
@@ -95,6 +106,7 @@ export default [
     genres: 'Russian music.',
     colorBackground: '#2100EB',
     colorText: '#FFF',
-    stationSource: 'https://soundsession.center:8443/russian',
+    UrlSource: 'https://soundsession.center:8443/russian',
+    UrlTrackName: 'https://soundsession.center/metadata.php?station=russian',
   },
 ]

@@ -26,7 +26,7 @@
     <div class="track-name">{{ track_name }}</div>
     <div class="track-author">{{ track_author }}</div>
     <div class="timeline"></div>
-    <audio :src="stationSource" class="player-audio" controls id="player-audio" preload="auto" ref="audio"></audio>
+    <audio :src="UrlSource" class="player-audio" controls id="player-audio" preload="auto" ref="audio"></audio>
   </div>
 </template>
 
@@ -44,7 +44,8 @@
         track_author: '',
         title: station.title,
         path: station.path, //
-        stationSource: station.stationSource,
+        UrlSource: station.UrlSource,
+        UrlTrackName: station.UrlTrackName,
         stationBackgroundColor: station.colorBackground, // цвет фон станции
         stationTextColor: station.colorText, // цвет текста станции
         volume: 75, // уровень звука
@@ -108,13 +109,13 @@
     },
     mounted: function () {
       this.track_name = 'Loading...'
-      this.track_author = 'stantion'
+      this.track_author = 'station'
       // свяжем контейнер с переменной.
       this.audio = document.getElementById('player-audio')
 
       // Запускаем обновление название трека каждые 5 секунд.
       this.mouseWait = setTimeout(() => {
-        this.axios.get('https://soundsession.center/metadata.php?station=' + this.path).then((response) => {
+        this.axios.get(this.UrlTrackName).then((response) => {
           this.track_name = response.data[0].title
           this.track_author = response.data[0].artist
         }).catch(error => {
