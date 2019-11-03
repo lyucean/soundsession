@@ -52,8 +52,10 @@
         playStatus: false, // статус плеера
         playReady: true, // готов ли плеер к командам и обрабатывает предыдущую
         buttonsDisplay: false, // флаг скрытия элементов
-        mouseWait: null, // таймер скрытия элементов экрана
+        mouseHideWait: null, // таймер скрытия элементов экрана
+        mouseHideWaitPeriod: 5, // Период таймера скрытия элементов экрана
         timerLoadingTrackName: null, // таймер загрузки названия трека
+        timerLoadingTrackNamePeriod: 3, // Период таймера загрузки названия трека
         isMobile: null, // примитивное оперделение устройства
         audio: undefined, // тут будет наш <audio>
         loading: true, // анимация ожидания загрузки
@@ -85,26 +87,22 @@
       },
       // Обработать движение мышью.
       onMouseMove () {
-        // Если полный экран.
+        // Если плеер запущен
         if (this.playStatus) {
           // Показываем элементы управления.
           this.buttonsDisplay = true
 
-          // Запускаем таймер, если это не мобильный
+          // Запускаем таймер на скрытие элемнтов, если это не мобильный
           if (!this.isMobile) {
-            this.runTiming()
+            // Всегда очищаем предыдущий таймер при вызове метода.
+            clearTimeout(this.mouseHideWait)
+            // Запускаем новый отсчет.
+            this.mouseHideWait = setTimeout(() => {
+              // Скрыть элементы управления.
+              this.buttonsDisplay = false
+            }, this.mouseHideWaitPeriod * 1000)
           }
         }
-      },
-      // Запустить таймер.
-      runTiming () {
-        // Всегда очищаем предыдущий таймер при вызове метода.
-        clearTimeout(this.mouseWait)
-        // Запускаем новый отсчет.
-        this.mouseWait = setTimeout(() => {
-          // Скрыть элементы управления.
-          this.buttonsDisplay = false
-        }, 5000)
       },
     },
     mounted: function () {
@@ -114,14 +112,14 @@
       this.audio = document.getElementById('player-audio')
 
       // Запускаем обновление название трека каждые 5 секунд.
-      this.mouseWait = setTimeout(() => {
+      this.timerLoadingTrackName = setTimeout(() => {
         this.axios.get(this.UrlTrackName).then((response) => {
           this.track_name = response.data[0].title
           this.track_author = response.data[0].artist
         }).catch(error => {
           console.log(error)
         }).finally(() => (this.loading = false))
-      }, 5000)
+      }, this.timerLoadingTrackNamePeriod * 1000)
 
     },
     beforeDestroy () {
@@ -141,7 +139,7 @@
       this.$parent.$on('play', this.play)
 
       // вешаем собыите на опредление мобильного, всё что ниже 700 - мобильный
-      this.isMobile = document.documentElement.clientWidth > 700
+      this.isMobile = document.documentElement.clientWidth < 700
     }
   }
 </script>

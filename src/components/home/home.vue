@@ -74,7 +74,6 @@
       },
       // Пробросим собыите срабатывания мыши
       recalculateHeight () {
-        console.log(window.outerHeight)
         this.realHeight = window.outerHeight // изменим высотку экрана
       }
     },
