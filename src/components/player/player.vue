@@ -26,7 +26,7 @@
     <div class="track-name">{{ track_name }}</div>
     <div class="track-author">{{ track_author }}</div>
     <div class="timeline"></div>
-    <audio :src="UrlSource" class="player-audio" controls id="player-audio" preload="auto" ref="audio"></audio>
+    <audio :src="urlSource" class="player-audio" controls id="player-audio" preload="auto" ref="audio"></audio>
   </div>
 </template>
 
@@ -44,8 +44,8 @@
         track_author: '',
         title: station.title,
         path: station.path, //
-        UrlSource: station.UrlSource,
-        UrlTrackName: station.UrlTrackName,
+        urlSource: station.urlSource,
+        urlTrackName: station.urlTrackName,
         stationBackgroundColor: station.colorBackground, // цвет фон станции
         stationTextColor: station.colorText, // цвет текста станции
         volume: 75, // уровень звука
@@ -125,7 +125,7 @@
       this.timerLoadingTrackName = setInterval(() => {
 
         // подгрузка или вывод ошибок
-        this.axios.get(this.UrlTrackName).then((response) => {
+        this.axios.get(this.urlTrackName).then((response) => {
           this.track_name = response.data[0].title
           this.track_author = response.data[0].artist
         }).finally(() => (this.loading = false))
