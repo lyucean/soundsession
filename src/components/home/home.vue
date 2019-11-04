@@ -83,7 +83,7 @@
         this.$emit('onMouseMove')
       },
       onMouseWheel (event) {
-        if (0 < event.deltaY) {
+        if (event.deltaY < 0) {
           this.$emit('volumeUp')
         } else {
           this.$emit('volumeDown')
