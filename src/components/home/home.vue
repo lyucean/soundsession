@@ -1,5 +1,8 @@
 <template>
-  <div :style="setVarCSS" @mousemove="onMouseMove" @orientationchange="setVarCSS" class="home">
+  <div :style="setVarCSS"
+       @mousemove="onMouseMove"
+       @mousewheel="onMouseWheel"
+       @orientationchange="setVarCSS" class="home">
     <div class="home__selector">
       <router-link class="home__selector-link" to="/select"></router-link>
     </div>
@@ -70,6 +73,14 @@
     methods: {
       // Пробросим собыите срабатывания мыши
       onMouseMove () {
+        this.$emit('onMouseMove')
+      },
+      onMouseWheel (event) {
+        if (0 < event.deltaY) {
+          this.$emit('volumeUp')
+        } else {
+          this.$emit('volumeDown')
+        }
         this.$emit('onMouseMove')
       },
       // Пробросим собыите срабатывания мыши

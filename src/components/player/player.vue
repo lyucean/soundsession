@@ -85,9 +85,19 @@
           this.playStatus = this.buttonsDisplay = false
         }
       },
+      volumeUp () {
+        if (this.playStatus && this.volume < 100) {
+          this.volume++
+        }
+      },
+      volumeDown () {
+        if (this.playStatus && 0 < this.volume) {
+          this.volume--
+        }
+      },
       // Обработать движение мышью.
       onMouseMove () {
-        // Если плеер запущен
+        // Если плеер запущен и элементы скрыты
         if (this.playStatus) {
           // Показываем элементы управления.
           this.buttonsDisplay = true
@@ -118,8 +128,6 @@
         this.axios.get(this.UrlTrackName).then((response) => {
           this.track_name = response.data[0].title
           this.track_author = response.data[0].artist
-        }).catch(error => {
-          // console.log(error)
         }).finally(() => (this.loading = false))
 
       }, this.timerLoadingTrackNamePeriod * 1000)
@@ -139,6 +147,8 @@
     created: function () {
       // В родителе емитим события
       this.$parent.$on('onMouseMove', this.onMouseMove)
+      this.$parent.$on('volumeUp', this.volumeUp)
+      this.$parent.$on('volumeDown', this.volumeDown)
       this.$parent.$on('play', this.play)
 
       // вешаем собыите на опредление мобильного, всё что ниже 700 - мобильный
