@@ -28,6 +28,15 @@
 
   export default {
     name: 'home',
+    metaInfo () {
+      // метатеги страницы
+      return {
+        title: this.station.metaDescription,
+        meta: [
+          { name: 'description', content: this.station.metaDescription }
+        ]
+      }
+    },
     data () {
       return {
         station: stations.find(item => {
@@ -61,8 +70,6 @@
       }
     },
     mounted () {
-      // смени заголовок на станцию
-      document.title = this.station.title
 
       // добавим событие на поворот экрана
       window.addEventListener('resize', this.recalculateHeight, false)

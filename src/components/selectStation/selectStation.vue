@@ -32,6 +32,14 @@
 
   export default {
     name: 'selectStation.vue',
+    metaInfo: {
+      // смени заголовок
+      title: 'All sound. Sound session. Beautiful music can make a beautiful life.',
+      meta: [{
+        name: 'description',
+        content: 'All sound. Sound session. Beautiful music can make a beautiful life.'
+      }]
+    },
     data () {
       return {
         items: stations.map(function (el) {
@@ -46,8 +54,6 @@
       }
     },
     mounted: function () {
-      // смени заголовок
-      document.title = 'Choose your mood :)'
 
       // анимация разворачивания списков
       this.items.forEach(function (item, i) {

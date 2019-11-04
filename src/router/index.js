@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueMeta from 'vue-meta'
 
 import NotFound from '../components/NotFound/NotFound.vue'
 import home from '../components/home/home.vue'
@@ -9,7 +10,14 @@ import selectStation from '../components/selectStation/selectStation.vue'
 import stations from '../data/stations.js'
 
 Vue.use(Router)
+// ajax запросы
 Vue.use(VueAxios, axios)
+// мета таеги
+Vue.use(VueMeta, {
+  // optional pluginOptions
+  refreshOnceOnNavigation: true
+})
+
 
 export default new Router({
   routes: [

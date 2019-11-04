@@ -6,7 +6,11 @@
 </template>
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  metaInfo: {
+    title: 'All sound. Sound session. Beautiful music can make a beautiful life.',
+    titleTemplate: null
+  }
 }
 </script>
 <!-- Это основной набор стилеей, который будут наследовать все компоненты -->

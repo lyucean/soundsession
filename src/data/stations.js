@@ -8,6 +8,7 @@ export default [
     colorText: '#000',
     urlSource: 'https://soundsession.center:8443/all',
     urlTrackName: 'https://soundsession.center/metadata.php?station=all',
+    metaDescription: 'All sound. From POP to Rock',
   },
   {
     path: 'best',
@@ -17,6 +18,7 @@ export default [
     colorText: '#000',
     urlSource: 'https://soundsession.center:8443/best',
     urlTrackName: 'https://soundsession.center/metadata.php?station=best',
+    metaDescription: 'Best sound. POP, Dance, Electronic etc.',
   },
   {
     path: 'indie',
@@ -26,6 +28,7 @@ export default [
     colorText: '#000',
     urlSource: 'https://soundsession.center:8443/indie',
     urlTrackName: 'https://soundsession.center/metadata.php?station=indie',
+    metaDescription: 'Indie sound. Indie, Rock, Alternative etc.',
   },
   {
     path: 'electronic',
@@ -35,6 +38,7 @@ export default [
     colorText: '#000',
     urlSource: 'https://soundsession.center:8443/electronic',
     urlTrackName: 'https://soundsession.center/metadata.php?station=electronic',
+    metaDescription: 'Electronic sound. Electronic and other music',
   },
   {
     path: 'lite',
@@ -44,6 +48,7 @@ export default [
     colorText: '#000',
     urlSource: 'https://soundsession.center:8443/lite',
     urlTrackName: 'https://soundsession.center/metadata.php?station=lite',
+    metaDescription: 'Lite sound. Lounge, Chillout, Downtempo etc.',
   },
   {
     path: 'sweet',
@@ -53,6 +58,7 @@ export default [
     colorText: '#000',
     urlSource: 'https://soundsession.center:8443/sweet',
     urlTrackName: 'https://soundsession.center/metadata.php?station=sweet',
+    metaDescription: 'Sweet sound. Jazz, Bossanova etc.',
   },
   {
     path: 'dark',
@@ -62,6 +68,7 @@ export default [
     colorText: '#000',
     urlSource: 'https://soundsession.center:8443/dark',
     urlTrackName: 'https://soundsession.center/metadata.php?station=dark',
+    metaDescription: 'Dark sound. Bass, Garage, Dubstep light etc.',
   },
   {
     path: 'beat',
@@ -71,6 +78,7 @@ export default [
     colorText: '#000',
     urlSource: 'https://soundsession.center:8443/beat',
     urlTrackName: 'https://soundsession.center/metadata.php?station=beat',
+    metaDescription: 'Beat sound. Rap, Hip-hop, Trap etc.',
   },
   {
     path: 'deep',
@@ -80,6 +88,7 @@ export default [
     colorText: '#000',
     urlSource: 'https://soundsession.center:8443/deep',
     urlTrackName: 'https://soundsession.center/metadata.php?station=deep',
+    metaDescription: 'Deep sound. House, Disco, Dance etc.',
   },
   {
     path: 'drum',
@@ -89,6 +98,7 @@ export default [
     colorText: '#000',
     urlSource: 'https://soundsession.center:8443/drum',
     urlTrackName: 'https://soundsession.center/metadata.php?station=drum',
+    metaDescription: 'Drum sound. Drum’n’Bass, Liquid, IDM etc.',
   },
   {
     path: 'hard',
@@ -99,6 +109,7 @@ export default [
     colorPlaylistButton: '#FFF',
     urlSource: 'https://soundsession.center:8443/hard',
     urlTrackName: 'https://soundsession.center/metadata.php?station=hard',
+    metaDescription: 'Hard sound. Rock, Metall etc.',
   },
   {
     path: 'russian',
@@ -108,5 +119,6 @@ export default [
     colorText: '#FFF',
     urlSource: 'https://soundsession.center:8443/russian',
     urlTrackName: 'https://soundsession.center/metadata.php?station=russian',
+    metaDescription: 'Russian sound. Russian POP, Rap etc.',
   },
 ]
