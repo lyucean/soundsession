@@ -125,6 +125,7 @@
       this.timerLoadingTrackName = setInterval(() => {
 
         // подгрузка или вывод ошибок
+        this.axios.defaults.headers['Content-Type'] = 'application/json'
         this.axios.get(this.urlTrackName).then((response) => {
           this.track_name = response.data[0].title
           this.track_author = response.data[0].artist
