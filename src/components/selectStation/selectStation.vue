@@ -98,7 +98,6 @@
       })
     },
     methods: {
-      // Пробросим собыите срабатывания мыши
       recalculateHeight () {
         // пересчитаем высоту экрана, window.outerHeight не работает
         this.realHeight = document.documentElement.clientHeight // изменим высотку экрана
