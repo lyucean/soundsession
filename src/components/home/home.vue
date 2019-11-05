@@ -28,20 +28,6 @@
 
   export default {
     name: 'home',
-    metaInfo () {
-      // метатеги страницы
-      return {
-        title: this.station.metaDescription,
-        meta: [
-          { name: 'description', content: this.station.metaDescription },
-          { property: 'og:url', content: window.location.href },
-          { property: 'og:type', content: 'music.radio_station' },
-          { property: 'og:title', content: this.station.metaDescription },
-          { property: 'og:image', content: window.location.href + 'social/social_' + this.station.path },
-          { property: 'og:image:secure_url', content: window.location.href + 'social/social_' + this.station.path },
-        ]
-      }
-    },
     data () {
       return {
         station: stations.find(item => {
@@ -50,6 +36,47 @@
           }
         }),
         realHeight: document.documentElement.clientHeight,
+        metaImage: window.location.origin + '/static/social/social_' + this.$route.params.station + '.jpg',
+      }
+    },
+    metaInfo () {
+      // метатеги страницы
+      return {
+        title: this.station.metaDescription,
+        link: [
+          { rel: 'image_src', href: this.metaImage }
+        ],
+        meta: [
+          { name: 'description', content: this.station.genres },
+          { name: 'keywords', content: this.station.metaDescription },
+
+          { property: 'url', content: window.location.href },
+          { property: 'name', content: this.station.title },
+          { property: 'description', content: this.station.genres },
+          { property: 'image', content: this.metaImage },
+
+          { property: 'url', content: window.location.href },
+          { property: 'name', content: this.station.title },
+          { property: 'description', content: this.station.genres },
+          { property: 'image', content: this.metaImage },
+
+          { property: 'og:url', content: window.location.href },
+          { property: 'og:type', content: 'music.radio_station' },
+          { property: 'og:title', content: this.station.title },
+          { property: 'og:description', content: this.station.genres },
+          { property: 'og:image', content: this.metaImage },
+          { property: 'og:image:secure_url', content: this.metaImage },
+
+          { property: 'twitter:title', content: this.station.title },
+          { property: 'twitter:description', content: this.station.genres },
+          { property: 'twitter:card', content: 'summary_large_image' },
+          { property: 'twitter:site', content: window.location.href },
+          { property: 'twitter:image', content: this.metaImage },
+
+          { property: 'vk:image', content: this.metaImage },
+
+          { name: 'theme-color', content: this.station.colorBackground },
+        ]
       }
     },
     components: {
