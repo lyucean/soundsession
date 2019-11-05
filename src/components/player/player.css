@@ -1,195 +1,216 @@
 :root {
-  --station-color-background: #fff;
-  --station-color-text: #000;
+    --station-color-background: #fff;
+    --station-color-text: #000;
+    --station-volume: 50%;
+    --station-volume-bar: #fff;
 }
 
 .player {
-  display: grid;
-  height: auto;
-  width: 412px;
+    display: grid;
+    height: auto;
+    width: 412px;
 }
 
 .stations-title {
-  font-size: 46px;
-  line-height: 68px;
+    font-size: 46px;
+    line-height: 68px;
 }
 
 .stations-genres {
-  font-size: 18px;
-  line-height: 30px;
+    font-size: 18px;
+    line-height: 30px;
 }
 
 .track-name,
 .track-author {
-  font-size: 22px;
-  line-height: 30px;
+    font-size: 22px;
+    line-height: 30px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .track-name {
-  margin-top: 40px;
+    margin-top: 40px;
 }
 
 .track-name::selection,
 .track-author::selection {
-  background-color: var(--station-color-background);
-  color: var(--station-color-text);
+    background-color: var(--station-color-background);
+    color: var(--station-color-text);
 }
 
 .button-block {
-  display: flex;
-  align-items: stretch;
-  margin-top: 40px;
-  height: 68px;
+    display: flex;
+    align-items: stretch;
+    margin-top: 40px;
+    height: 68px;
 }
 
 .button-block,
 .stations-genres,
 .stations-title {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Chrome/Safari/Opera */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently not supported by any browser */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently not supported by any browser */
 }
 
 .wrapper-button {
-  width: 25%;
+    width: 25%;
 }
 
 .button-play {
-  height: 68px;
-  width: 60px;
-  background-color: var(--station-color-background);
-  -webkit-mask: url("./player_play.svg") no-repeat center;
-  mask: url("./player_play.svg") no-repeat center;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+    height: 68px;
+    width: 60px;
+    background-color: var(--station-color-background);
+    -webkit-mask: url("./player_play.svg") no-repeat center;
+    mask: url("./player_play.svg") no-repeat center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
 }
 
 .button-pause {
-  height: 68px;
-  width: 52px;
-  background-color: var(--station-color-background);
-  -webkit-mask: url("./player_pause.svg") no-repeat center;
-  mask: url("./player_pause.svg") no-repeat center;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+    margin-top: 4px;
+    height: 60px;
+    width: 52px;
+    background-color: var(--station-color-background);
+    -webkit-mask: url("./player_pause.svg") no-repeat center;
+    mask: url("./player_pause.svg") no-repeat center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
 }
 
 .button-next,
 .button-previous {
-  display: flex;
-  cursor: pointer;
-  opacity: .3;
-  width: 53px;
-  background-color: var(--station-color-background);
-  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+    display: flex;
+    cursor: pointer;
+    opacity: .3;
+    width: 53px;
+    background-color: var(--station-color-background);
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
 }
 
 .wrapper-animation {
-  display: flex;
-  align-items: stretch;
-  width: auto;
+    display: flex;
+    align-items: stretch;
+    width: auto;
 }
 
 .button-previous {
-  -webkit-mask: url("./player_previous.svg") no-repeat left;
-  mask: url("./player_previous.svg") no-repeat left;
+    -webkit-mask: url("./player_previous.svg") no-repeat left;
+    mask: url("./player_previous.svg") no-repeat left;
 }
 
 .button-next {
-  -webkit-mask: url("./player_next.svg") no-repeat right;
-  mask: url("./player_next.svg") no-repeat right;
+    -webkit-mask: url("./player_next.svg") no-repeat right;
+    mask: url("./player_next.svg") no-repeat right;
 }
 
 .wrapper-volume {
-  display: flex;
-  align-items: stretch;
-  width: auto;
+    display: flex;
+    align-items: stretch;
+    width: auto;
 }
 
 .volume-button {
-  /* width: 105px; когда вернёшь кнопки */
-  width: 55px;
-  display: flex;
-  justify-content: flex-end;
-  cursor: pointer;
-  opacity: .3;
-  background-color: var(--station-color-background);
-  -webkit-mask: url("./player_volume.svg") no-repeat right;
-  mask: url("./player_volume.svg") no-repeat right;
+    /* width: 105px; когда вернёшь кнопки */
+    width: 55px;
+    height: 22px;
+    margin-top: 23px;
+    cursor: pointer;
+    opacity: .3;
+    background-color: var(--station-color-background);
+    -webkit-mask: url("./player_volume.svg") no-repeat right;
+    mask: url("./player_volume.svg") no-repeat right;
 }
 
 .volume-progress-bar {
-  width: 81px;
-  display: grid;
-  align-content: center;
-  padding-left: 15px;
-  padding-top: 3px;
+    width: 81px;
+    display: grid;
+    margin-top: 31px;
+    padding-left: 15px;
+    padding-top: 3px;
 }
 
 .volume-progress-bar > input {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 3px;
-  border-radius: 5px;
-  outline: none;
-  opacity: 0.3;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-  background: var(--station-color-background);
+    -webkit-appearance: none; /* WebKit */
+    -moz-appearance: none; /* Mozilla */
+    appearance: none; /* CSS3 */
+    width: 100%;
+    height: 3px;
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.3;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    background: var(--station-color-background);
+    background: linear-gradient(to right, var(--station-color-background) 0%, var(--station-color-background) var(--station-volume), var(--station-volume-bar) var(--station-volume), var(--station-volume-bar) 100%);
 }
 
 .volume-progress-bar > input::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: var(--station-color-background);
-  cursor: pointer;
+    -webkit-appearance: none; /* WebKit */
+    -moz-appearance: none; /* Mozilla */
+    appearance: none; /* CSS3 */
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--station-color-background);
+    cursor: pointer;
+}
+
+.volume-progress-bar > input::-ms-thumb {
+    -webkit-appearance: none; /* WebKit */
+    -moz-appearance: none; /* Mozilla */
+    appearance: none; /* CSS3 */
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--station-color-background);
+    cursor: pointer;
 }
 
 .volume-progress-bar > input::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: rgb(173, 173, 173);
-  cursor: pointer;
+    -webkit-appearance: none; /* WebKit */
+    -moz-appearance: none; /* Mozilla */
+    appearance: none; /* CSS3 */
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--station-color-background);
+    cursor: pointer;
 }
 
 .button-next:hover,
 .button-previous:hover,
 .wrapper-volume:hover .volume-button,
 .wrapper-volume:hover .volume-progress-bar > input {
-  opacity: 1;
-  transition-duration: 200ms;
+    opacity: 1;
+    transition-duration: 200ms;
 }
 
 /* эффект анимации */
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {
-  transition: all .2s ease;
+    transition: all .2s ease;
 }
 
 .slide-fade-leave-active {
-  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 
 .slide-fade-enter,
 .slide-fade-leave-to
-  /* .slide-fade-leave-active below version 2.1.8 */
+    /* .slide-fade-leave-active below version 2.1.8 */
 {
-  transform: translateX(-50px);
-  opacity: 0;
+    transform: translateX(-50px);
+    opacity: 0;
 }
 
 .player-audio {
-  display: none;
+    display: none;
 }
 
 /* моблиьные адаптации */
@@ -206,85 +227,85 @@
 }
 
 @media (min-width: 375px) and (max-width: 767px) {
-  .player {
-    width: 336px;
-  }
+    .player {
+        width: 336px;
+    }
 
-  .stations-title {
-    font-size: 46px;
-    line-height: 55px;
-    padding-left: 20px;
-  }
+    .stations-title {
+        font-size: 46px;
+        line-height: 55px;
+        padding-left: 20px;
+    }
 
-  .stations-genres {
-    font-size: 18px;
-    line-height: 30px;
-    padding-left: 20px;
-  }
+    .stations-genres {
+        font-size: 18px;
+        line-height: 30px;
+        padding-left: 20px;
+    }
 
-  .track-name {
-    margin-top: 50px;
-  }
+    .track-name {
+        margin-top: 50px;
+    }
 
-  .track-name,
-  .track-author {
-    font-size: 22px;
-    line-height: 31px;
-    padding-left: 20px;
-  }
+    .track-name,
+    .track-author {
+        font-size: 22px;
+        line-height: 31px;
+        padding-left: 20px;
+    }
 
-  .wrapper-button {
-    margin-left: 20px;
-  }
+    .wrapper-button {
+        margin-left: 20px;
+    }
 
-  .button-next,
-  .button-previous {
-    margin-left: 20px;
-  }
+    .button-next,
+    .button-previous {
+        margin-left: 20px;
+    }
 
-  .wrapper-volume {
-    display: none;
-  }
+    .wrapper-volume {
+        display: none;
+    }
 }
 
 @media (min-width: 320px) and (max-width: 374px) {
 
-  .player {
-    width: 280px;
-  }
+    .player {
+        width: 280px;
+    }
 
-  .stations-title {
-    font-size: 36px;
-    line-height: 43px;
-    padding-left: 30px;
-  }
+    .stations-title {
+        font-size: 36px;
+        line-height: 43px;
+        padding-left: 30px;
+    }
 
-  .stations-genres {
-    font-size: 16px;
-    line-height: 26px;
-    padding-left: 30px;
-  }
+    .stations-genres {
+        font-size: 16px;
+        line-height: 26px;
+        padding-left: 30px;
+    }
 
-  .track-name,
-  .track-author {
+    .track-name,
+    .track-author {
 
-    font-size: 18px;
-    line-height: 25px;
-    padding-left: 30px;
-  }
+        font-size: 18px;
+        line-height: 25px;
+        padding-left: 30px;
+    }
 
-  .wrapper-button {
-    margin-left: 30px;
-  }
+    .wrapper-button {
+        margin-left: 30px;
+    }
 
-  .button-next,
-  .button-previous {
-    margin-left: 20px;
-  }
+    .button-next,
+    .button-previous {
+        margin-left: 20px;
+    }
 
-  .wrapper-volume {
-    display: none;
-  }
+    .wrapper-volume {
+        display: none;
+    }
 
 }
 

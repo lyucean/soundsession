@@ -142,6 +142,8 @@
         return {
           '--station-color-background': this.stationTextColor,
           '--station-color-text': this.stationBackgroundColor,
+          '--station-volume-bar': this.stationTextColor + '4d',
+          '--station-volume': this.volume + '%',
         }
       },
     },
