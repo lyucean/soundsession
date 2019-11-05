@@ -154,8 +154,8 @@
       this.$parent.$on('volumeDown', this.volumeDown)
       this.$parent.$on('play', this.play)
 
-      // вешаем собыите на опредление мобильного, всё что ниже 700 - мобильный
-      this.isMobile = document.documentElement.clientWidth < 700
+      // определение мобильного
+      this.isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(navigator.userAgent)
     }
   }
 </script>

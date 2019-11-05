@@ -49,6 +49,7 @@
         }),
         appear_delay: 50, // время задержки перед появлением/исчезновением каждого элемента
         hoverEffectIsActive: false,
+        isMobile: false,
         linkBack: '/all', // на всякий по умолчанию /all
         realHeight: document.documentElement.clientHeight,
       }
@@ -60,8 +61,8 @@
         setTimeout(() => item.opacity = 1, this.appear_delay * i)
       }, this)
 
-      // включение эффекта наведения на станцию
-      this.hoverEffectIsActive = true
+      // включение эффекта наведения на станцию, если это не мобильный
+      this.hoverEffectIsActive = !this.isMobile
 
       // добавим событие на поворот экрана
       window.addEventListener('resize', this.recalculateHeight, false)
@@ -110,5 +111,9 @@
         }
       }
     },
+    created: function () {
+      // определение мобильного
+      this.isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(navigator.userAgent)
+    }
   }
 </script>
