@@ -75,16 +75,16 @@
       // выключение эффекта наведения на станцию
       this.hoverEffectIsActive = false
 
-      // эффект постепенного исчезновения
+      // эффект постепенного исчезновения в обратном порядке
       this.items.forEach(function (item, i, items) {
         setTimeout(function () {
           item.opacity = 0
 
           // после послднего переходим на страницу
-          if (i === items.length - 1) {
+          if (i === 0) {
             next()
           }
-        }, this.appear_delay * i)
+        }, this.appear_delay * (items.length - i))
       }, this)
 
     },
