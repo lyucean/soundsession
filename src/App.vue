@@ -9,7 +9,10 @@ export default {
   name: 'App',
   metaInfo: {
     title: 'All sound. Sound session. Beautiful music can make a beautiful life.',
-    titleTemplate: null
+    titleTemplate: null,
+    meta: [
+      { name: 'google', value: 'notranslate' }
+    ]
   }
 }
 </script>

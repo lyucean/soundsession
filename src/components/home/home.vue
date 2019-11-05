@@ -33,7 +33,12 @@
       return {
         title: this.station.metaDescription,
         meta: [
-          { name: 'description', content: this.station.metaDescription }
+          { name: 'description', content: this.station.metaDescription },
+          { property: 'og:url', content: window.location.href },
+          { property: 'og:type', content: 'music.radio_station' },
+          { property: 'og:title', content: this.station.metaDescription },
+          { property: 'og:image', content: window.location.href + 'social/social_' + this.station.path },
+          { property: 'og:image:secure_url', content: window.location.href + 'social/social_' + this.station.path },
         ]
       }
     },
