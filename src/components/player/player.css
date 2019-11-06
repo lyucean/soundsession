@@ -65,6 +65,9 @@
     height: 68px;
     width: 60px;
     background-color: var(--station-color-background);
+    background-image: url("./player_play.svg");
+    background-repeat: no-repeat;
+    background-position: center;
     -webkit-mask: url("./player_play.svg") no-repeat center;
     mask: url("./player_play.svg") no-repeat center;
     cursor: pointer;
@@ -76,6 +79,9 @@
     height: 60px;
     width: 52px;
     background-color: var(--station-color-background);
+    background-image: url("./player_pause.svg");
+    background-repeat: no-repeat;
+    background-position: center;
     -webkit-mask: url("./player_pause.svg") no-repeat center;
     mask: url("./player_pause.svg") no-repeat center;
     cursor: pointer;
@@ -99,11 +105,17 @@
 }
 
 .button-previous {
+    background-image: url("./player_previous.svg");
+    background-repeat: no-repeat;
+    background-position: center;
     -webkit-mask: url("./player_previous.svg") no-repeat left;
     mask: url("./player_previous.svg") no-repeat left;
 }
 
 .button-next {
+    background-image: url("./player_next.svg");
+    background-repeat: no-repeat;
+    background-position: center;
     -webkit-mask: url("./player_next.svg") no-repeat right;
     mask: url("./player_next.svg") no-repeat right;
 }
@@ -122,6 +134,9 @@
     cursor: pointer;
     opacity: .3;
     background-color: var(--station-color-background);
+    background-image: url("./player_volume.svg");
+    background-repeat: no-repeat;
+    background-position: center;
     -webkit-mask: url("./player_volume.svg") no-repeat right;
     mask: url("./player_volume.svg") no-repeat right;
 }
