@@ -30,11 +30,7 @@
     name: 'home',
     data () {
       return {
-        station: stations.find(item => {
-          if (this.$route.params.station === item.path) {
-            return item
-          }
-        }),
+        station: stations[this.$route.params.station], // все переаметры нашей станции
         realHeight: document.documentElement.clientHeight,
         metaImage: window.location.origin + '/static/social/social_' + this.$route.params.station + '.jpg',
       }

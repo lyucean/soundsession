@@ -74,9 +74,11 @@
         // нужен промис, инече, если поставить на паузу плеер, кода он ещё не заигра, выпадет ошибка
         if (this.playReady) {
           this.playReady = false
-          this.audio.play().then(_ => {
-            this.playReady = true
-          })
+          this.audio.play()
+          this.playReady = true
+          //   .then(_ => {
+          //   this.playReady = true
+          // })
         }
       },
       pause () {

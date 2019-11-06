@@ -18,7 +18,6 @@ Vue.use(VueMeta, {
   refreshOnceOnNavigation: true
 })
 
-
 export default new Router({
   routes: [
     {
@@ -44,13 +43,10 @@ export default new Router({
       name: 'home',
       component: home,
       beforeEnter: (to, from, next) => { // перед переходом, проверям, что такая станция существует
-        if (stations.some(
-          station => {
-            return to.path === '/' + station.path
-          }
-        )){
+        let nameStation = to.path.slice(1)
+        if (stations[nameStation] !== undefined) {
           next()
-        }else {
+        } else {
           next('/404')
         }
       }

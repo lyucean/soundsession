@@ -1,6 +1,6 @@
 // path
-export default [
-  {
+export default {
+  all: {
     path: 'all',
     title: 'All sound',
     genres: 'From POP to Rock',
@@ -10,7 +10,7 @@ export default [
     urlTrackName: 'https://soundsession.center/metadata.php?station=all',
     metaDescription: 'All sound. From POP to Rock',
   },
-  {
+  best: {
     path: 'best',
     title: 'Best',
     genres: 'POP, Dance, Electronic etc.',
@@ -20,7 +20,7 @@ export default [
     urlTrackName: 'https://soundsession.center/metadata.php?station=best',
     metaDescription: 'Best sound. POP, Dance, Electronic etc.',
   },
-  {
+  indie: {
     path: 'indie',
     title: 'Indie',
     genres: 'Indie, Rock, Alternative etc',
@@ -30,7 +30,7 @@ export default [
     urlTrackName: 'https://soundsession.center/metadata.php?station=indie',
     metaDescription: 'Indie sound. Indie, Rock, Alternative etc.',
   },
-  {
+  electronic: {
     path: 'electronic',
     title: 'Electronic',
     genres: 'Electronic and other music',
@@ -40,7 +40,7 @@ export default [
     urlTrackName: 'https://soundsession.center/metadata.php?station=electronic',
     metaDescription: 'Electronic sound. Electronic and other music',
   },
-  {
+  lite: {
     path: 'lite',
     title: 'Lite',
     genres: 'Lounge, Chillout, Downtempo etc.',
@@ -50,7 +50,7 @@ export default [
     urlTrackName: 'https://soundsession.center/metadata.php?station=lite',
     metaDescription: 'Lite sound. Lounge, Chillout, Downtempo etc.',
   },
-  {
+  sweet: {
     path: 'sweet',
     title: 'Sweet',
     genres: 'Jazz, Bossanova etc.',
@@ -60,7 +60,7 @@ export default [
     urlTrackName: 'https://soundsession.center/metadata.php?station=sweet',
     metaDescription: 'Sweet sound. Jazz, Bossanova etc.',
   },
-  {
+  dark: {
     path: 'dark',
     title: 'Dark',
     genres: 'Bass, Trip hop, Dubstep light etc.',
@@ -70,7 +70,7 @@ export default [
     urlTrackName: 'https://soundsession.center/metadata.php?station=dark',
     metaDescription: 'Dark sound. Bass, Garage, Dubstep light etc.',
   },
-  {
+  beat: {
     path: 'beat',
     title: 'Beat',
     genres: 'Rap, Hip-hop, Trap etc.',
@@ -80,7 +80,7 @@ export default [
     urlTrackName: 'https://soundsession.center/metadata.php?station=beat',
     metaDescription: 'Beat sound. Rap, Hip-hop, Trap etc.',
   },
-  {
+  deep: {
     path: 'deep',
     title: 'Deep',
     genres: 'House, Disco, Dance etc.',
@@ -90,7 +90,7 @@ export default [
     urlTrackName: 'https://soundsession.center/metadata.php?station=deep',
     metaDescription: 'Deep sound. House, Disco, Dance etc.',
   },
-  {
+  drum: {
     path: 'drum',
     title: 'Drum',
     genres: 'Drum’n’Bass, Liquid, IDM etc.',
@@ -100,7 +100,7 @@ export default [
     urlTrackName: 'https://soundsession.center/metadata.php?station=drum',
     metaDescription: 'Drum sound. Drum’n’Bass, Liquid, IDM etc.',
   },
-  {
+  hard: {
     path: 'hard',
     title: 'Hard',
     genres: 'Rock, Metall etc.',
@@ -111,7 +111,7 @@ export default [
     urlTrackName: 'https://soundsession.center/metadata.php?station=hard',
     metaDescription: 'Hard sound. Rock, Metall etc.',
   },
-  {
+  russian: {
     path: 'russian',
     title: 'Russian',
     genres: 'Russian music.',
@@ -120,5 +120,5 @@ export default [
     urlSource: 'https://soundsession.center:8443/russian',
     urlTrackName: 'https://soundsession.center/metadata.php?station=russian',
     metaDescription: 'Russian sound. Russian POP, Rap etc.',
-  },
-]
+  }
+}

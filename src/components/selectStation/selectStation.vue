@@ -42,10 +42,10 @@
     },
     data () {
       return {
-        items: stations.map(function (el) {
+        items: Object.keys(stations).map(function (key) {
           // нам нужно добавить свойство прозарчности в массв для каждого элемента
-          el['opacity'] = 0
-          return el
+          stations[key]['opacity'] = 0
+          return stations[key]
         }),
         appear_delay: 50, // время задержки перед появлением/исчезновением каждого элемента
         hoverEffectIsActive: false,
