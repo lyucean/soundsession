@@ -50,7 +50,7 @@
         stationTextColor: station.colorText, // цвет текста станции
         volume: 75, // уровень звука
         playStatus: false, // статус плеера
-        playReady: true, // готов ли плеер к командам и обрабатывает предыдущую
+        // playReady: true, // готов ли плеер к командам и обрабатывает предыдущую
         buttonsDisplay: false, // флаг скрытия элементов
         mouseHideWait: null, // таймер скрытия элементов экрана
         mouseHideWaitPeriod: 5, // Период таймера скрытия элементов экрана
@@ -72,20 +72,19 @@
         this.playStatus = this.buttonsDisplay = true
 
         // нужен промис, инече, если поставить на паузу плеер, кода он ещё не заигра, выпадет ошибка
-        if (this.playReady) {
-          this.playReady = false
+        // if (this.playReady) {
+        // this.playReady = false
           this.audio.play()
-          this.playReady = true
-          //   .then(_ => {
-          //   this.playReady = true
-          // })
-        }
+        // this.playReady = true
+        // }
       },
       pause () {
-        if (this.playReady) {
+        // if (this.playReady) {
+
           this.audio.pause()
+
           this.playStatus = this.buttonsDisplay = false
-        }
+        // }
       },
       volumeUp () {
         if (this.playStatus && this.volume < 100) {
